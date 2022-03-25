@@ -606,7 +606,6 @@ GameObject:
   - component: {fileID: 1629115695}
   - component: {fileID: 1629115697}
   - component: {fileID: 1629115696}
-  - component: {fileID: 1629115698}
   m_Layer: 0
   m_Name: Kindom
   m_TagString: Untagged
@@ -622,7 +621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629115694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.57911, y: -26.851917, z: 66.85625}
+  m_LocalPosition: {x: 50.6, y: 0, z: 104.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -637,7 +636,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629115694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749beae1e6b3bdf4db3bb5038451da9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 47d2fefe31ae1c140b81f80b681e8d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1629115697
@@ -651,21 +650,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1629115698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629115694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab05adfe4922fa449f7b4836afec5e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 1000
+  m_Size: {x: 8.295818, y: 4.62446, z: 4.963089}
+  m_Center: {x: 0.55282784, y: 1.8122306, z: 0.22341156}
 --- !u!850595691 &1908915936
 LightingSettings:
   m_ObjectHideFlags: 0
