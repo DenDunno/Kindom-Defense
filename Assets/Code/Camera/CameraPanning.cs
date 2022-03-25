@@ -3,8 +3,8 @@
 public class CameraPanning : IUpdatable
 {
     private readonly Camera _mainCamera;
-    private Vector3 _anchorPosition;
-    private Vector3 _cameraPosition;
+    private Vector3 _touchAnchor;
+    private Vector3 _worldAnchor;
 
     public CameraPanning(Camera mainCamera)
     {
@@ -15,8 +15,8 @@ public class CameraPanning : IUpdatable
     {
         if(Input.GetMouseButtonDown(0))
         {
-            _anchorPosition = Input.mousePosition;
-            _cameraPosition = _mainCamera.transform.position;
+            _touchAnchor = Input.mousePosition;
+            _worldAnchor = _mainCamera.transform.position;
         }
         
         if(Input.GetMouseButton(0))
@@ -27,11 +27,11 @@ public class CameraPanning : IUpdatable
 
     private Vector3 EvaluateCameraPosition()
     {
-        Vector3 currentPosition = Input.mousePosition;
-        currentPosition.z = _anchorPosition.z = _cameraPosition.y;
+        Vector3 touchPosition = Input.mousePosition;
+        touchPosition.z = _touchAnchor.z = _worldAnchor.y;
         
-        Vector3 direction = _mainCamera.ScreenToWorldPoint(currentPosition) - _mainCamera.ScreenToWorldPoint(_anchorPosition);
-        Vector3 position = _cameraPosition - direction;
+        Vector3 direction = _mainCamera.ScreenToWorldPoint(touchPosition) - _mainCamera.ScreenToWorldPoint(_touchAnchor);
+        Vector3 position = _worldAnchor - direction;
 
         return new Vector3(position.x, _mainCamera.transform.position.y, position.z);
     }

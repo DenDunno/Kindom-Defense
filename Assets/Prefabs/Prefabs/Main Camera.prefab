@@ -176,8 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraBorders:
-    <TopBorder>k__BackingField: 42
-    <DownBorder>k__BackingField: 62
+    <TopBorder>k__BackingField: 62
+    <DownBorder>k__BackingField: 42
     <LeftBorder>k__BackingField: 17.5
     <RightBorder>k__BackingField: 76.8
   _mainCamera: {fileID: 2997319999935307747}
