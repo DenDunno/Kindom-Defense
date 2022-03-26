@@ -32,7 +32,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityNavMeshAgent
                 Debug.LogWarning("NavMeshAgent is null");
                 return TaskStatus.Failure;
             }
-
+            
             return navMeshAgent.SetDestination(destination.Value) ? TaskStatus.Success : TaskStatus.Failure;
         }
 
