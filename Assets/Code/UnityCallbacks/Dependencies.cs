@@ -14,23 +14,11 @@ public class Dependencies
         _updatables = dependencies.OfType<IUpdatable>();
     }
 
-    public void InitializeForEach()
-    {
-        _initializables.ForEach(element => element.Initialize());
-    }
-    
-    public void SubscribeForEach()
-    {
-        _subscribers.ForEach(element => element.Subsribe());
-    }
-    
-    public void UnsubscribeForEach()
-    {
-        _subscribers.ForEach(element => element.Unsubsribe());
-    }
-    
-    public void UpdateForEach()
-    {
-        _updatables.ForEach(element => element.Update());
-    }
+    public void InitializeForEach() => _initializables.ForEach(element => element.Initialize());
+
+    public void SubscribeForEach() => _subscribers.ForEach(element => element.Subsribe());
+
+    public void UnsubscribeForEach() => _subscribers.ForEach(element => element.Unsubsribe());
+
+    public void UpdateForEach() => _updatables.ForEach(element => element.Update());
 }

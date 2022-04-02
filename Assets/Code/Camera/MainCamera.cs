@@ -11,7 +11,8 @@ public class MainCamera : MonoBehaviour
         _dependencies = new Dependencies(new object[]
         {
             new CameraZoom(),
-            new CameraPanning(_mainCamera)
+            new CameraPanning(_mainCamera),
+            new PlayerSelection(_mainCamera)
         });
     }
 
