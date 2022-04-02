@@ -4,12 +4,12 @@ using UnityEngine;
 using Action = BehaviorDesigner.Runtime.Tasks.Action;
 
 [Serializable]
-public class DissolveAnimation : Action
+public class PlayDissolveAnimation : Action
 {
     [SerializeField] private Renderer[] _renderers;
     private MaterialPropertyBlock _dissolvePropertyBlock;
     private const string _dissolveName = "_DissolveFactor";
-    private const float _dissolveSpeed = 0.25f;
+    private const float _dissolveSpeed = 0.35f;
     private const float _timeBeforeDissolving = 2f;
     private int _dissolveId;
 
@@ -33,5 +33,7 @@ public class DissolveAnimation : Action
 
             yield return null;
         }
+        
+        gameObject.SetActive(false);
     }
 }
