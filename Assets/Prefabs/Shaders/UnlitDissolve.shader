@@ -1,71 +1,84 @@
-Shader "Custom/UnlitDissolve"
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Unlit/DissolveEffectShader"
 {
-    Properties
-    {
-        _MainTex ("Texture", 2D) = "white" {}
-        _NoiseTexture ("Noise texture", 2D) = "white" {}
-        _DissolveFactor ("Dissolve factor", Range(0, 1)) = 0.2
-        _DissolveSize ("Dissolve size", Range(0, 0.1)) = 0.02
-        [HDR] _DissolveColor("Dissolve color", Color) = (0.27, 1, 0.26, 1)
-    }
-    SubShader
-    {
-        Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
-        Blend SrcAlpha OneMinusSrcAlpha
-        LOD 100
+	Properties
+	{
+		_MainTex ("Texture", 2D) = "white" {}
+		_NoiseTex ("Texture", 2D) = "white" {}
+		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
+		[HDR] _EdgeColour1 ("Edge colour 1", Color) = (1.0, 1.0, 1.0, 1.0)
+		[HDR] _EdgeColour2 ("Edge colour 2", Color) = (1.0, 1.0, 1.0, 1.0)
+		_DissolveFactor ("Dissolution level", Range (0.0, 1.0)) = 0.1
+		_Edges ("Edge width", Range (0.0, 1.0)) = 0.1
+	}
+	SubShader
+	{
+		Tags { "Queue"="Transparent" "RenderType"="Transparent" }
+		LOD 100
 
-        Pass
-        {
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            #include "UnityCG.cginc"
+		Pass
+		{
+			Blend SrcAlpha OneMinusSrcAlpha
+			Lighting Off
+        	Fog { Mode Off }
 
-            sampler2D _MainTex;
-            sampler2D _NoiseTexture;
-            float4 _MainTex_ST;
-            half _DissolveFactor;
-            half _DissolveSize;
-            fixed4 _DissolveColor;
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			// make fog work
+			#pragma multi_compile DUMMY PIXELSNAP_ON
+			
+			#include "UnityCG.cginc"
 
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
+			struct appdata
+			{
+				float4 vertex : POSITION;
+				float2 uv : TEXCOORD0;
+			};
 
-            struct v2f
-            {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
-            };
+			struct v2f
+			{
+				float2 uv : TEXCOORD0;
+				float4 vertex : SV_POSITION;
+			};
 
-            v2f vert (appdata v)
-            {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                return o;
-            }
+			sampler2D _MainTex;
+			sampler2D _NoiseTex;
+			float4 _EdgeColour1;
+			float4 _EdgeColour2;
+			float _DissolveFactor;
+			float _Edges;
+			float4 _MainTex_ST;
+			
+			v2f vert (appdata v)
+			{
+				v2f o;
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
-            fixed4 frag (v2f i) : SV_Target
-            {
-                half4 main_texture_color = tex2D(_MainTex, i.uv);
-                const half noise_texture_color = tex2D(_NoiseTexture, i.uv).r;
+				#ifdef PIXELSNAP_ON
+                o.vertex = UnityPixelSnap (o.vertex);
+                #endif
 
-                if (noise_texture_color < _DissolveFactor + _DissolveSize)
-                {
-                    main_texture_color = _DissolveColor;
-                }
-                
-                if (noise_texture_color < _DissolveFactor)
-                {
-                    main_texture_color.a = 0;
-                }
-                
-                return main_texture_color;
-            }
-            ENDCG
-        }
-    }
+				return o;
+			}
+			
+			fixed4 frag (v2f i) : SV_Target
+			{
+				// sample the texture
+				float cutout = tex2D(_NoiseTex, i.uv).r;
+				fixed4 col = tex2D(_MainTex, i.uv);
+
+				if (cutout < _DissolveFactor)
+					discard;
+
+				if(cutout < col.a && cutout < _DissolveFactor + _Edges)
+					col =lerp(_EdgeColour1, _EdgeColour2, (cutout-_DissolveFactor)/_Edges );
+
+				return col;
+			}
+			ENDCG
+		}
+	}
 }

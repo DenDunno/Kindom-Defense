@@ -10,4 +10,9 @@ public static class EnumerableExtensions
             action(element);
         }
     }
+    
+    public static bool IsNotEmpty<T>(this Stack<T> stack)
+    {
+        return stack.Count != 0;
+    }
 }
