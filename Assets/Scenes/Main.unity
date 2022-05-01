@@ -7477,7 +7477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202c7520783491e49aa6d267c4f2d03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveList: {fileID: 11400000, guid: 47c7a72c3ca828245b50f7cc526c1bfe, type: 2}
+  _waveList: {fileID: 11400000, guid: 4528f5518472ecd479fb70e813a6327d, type: 2}
   _kingdom: {fileID: 1629115696}
 --- !u!1 &1575689313
 GameObject:

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private WaveList _waveList;
     [SerializeField] private Kingdom _kingdom;
-    private Stack<Wave> _waves;
+    private Queue<Wave> _waves;
     private EnemiesSpawner _enemiesSpawner;
     
     private IEnumerator Start()
@@ -24,13 +25,13 @@ public class WaveSpawner : MonoBehaviour
     {
         if (_waves.IsNotEmpty())
         {
-            Wave wave = _waves.Pop();
+            Wave wave = _waves.Dequeue();
 
             yield return new WaitForSeconds(wave.Delay);
 
-            foreach (Enemy enemy in wave.Enemies)
+            foreach (AssetReference enemyReference in wave.Enemies)
             {
-                _enemiesSpawner.Spawn(enemy);
+                _enemiesSpawner.Spawn(enemyReference);
                 yield return new WaitForSeconds(wave.SpawnRate);
             }
         }

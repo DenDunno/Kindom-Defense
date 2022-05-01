@@ -6,5 +6,5 @@ public class WaveList : ScriptableObject
 {
     [SerializeField] private List<Wave> _waves;
 
-    public Stack<Wave> Waves => new Stack<Wave>(_waves);
+    public Queue<Wave> Waves => new Queue<Wave>(_waves);
 }
