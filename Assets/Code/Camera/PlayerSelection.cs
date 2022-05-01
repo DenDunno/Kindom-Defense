@@ -16,7 +16,7 @@ public class PlayerSelection : IUpdatable
         if (Input.touchCount > 0)
         {
             int size = Physics.RaycastNonAlloc(_mainCamera.ScreenPointToRay(Input.mousePosition), _results);
-            _selectable.Unselect();
+            _selectable?.Unselect();
 
             for (var i = 0; i < size; ++i)
             {

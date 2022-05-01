@@ -18,7 +18,7 @@ public class EnemiesSpawner : IUpdatable
     
     public async void Spawn(AssetReference enemyReference)
     {
-        GameObject enemyGameObject = await Addressables.InstantiateAsync(enemyReference, _enemyStartPosition);
+        GameObject enemyGameObject = await Addressables.InstantiateAsync(enemyReference, _enemyStartPosition.position, Quaternion.identity, _enemyStartPosition);
         
         var enemy = enemyGameObject.GetComponent<Enemy>();
         enemy.Init(_enemyTargetPosition);

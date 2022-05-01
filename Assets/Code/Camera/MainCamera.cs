@@ -16,16 +16,6 @@ public class MainCamera : MonoBehaviour
         });
     }
 
-    private void OnEnable()
-    {
-        _dependencies.SubscribeForEach();
-    }
-    
-    private void OnDisable()
-    {
-        _dependencies.UnsubscribeForEach();
-    }
-
     private void Update()
     {
         _dependencies.UpdateForEach();
