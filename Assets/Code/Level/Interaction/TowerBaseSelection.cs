@@ -1,10 +1,12 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using EPOOutline;
 using UnityEngine;
 
 public class TowerBaseSelection : MonoBehaviour
 {
     [SerializeField] private TowerSelectionMenu _selectionMenu;
+    [SerializeField] private Outlinable _outlinable;
     private bool _isAnimation;
     
     public bool IsSelected { get; private set; }
@@ -24,6 +26,7 @@ public class TowerBaseSelection : MonoBehaviour
         if (IsSelected == isSelected && _isAnimation == false)
         {
             IsSelected = !isSelected;
+            _outlinable.enabled = IsSelected;
             await PlayAnimation(tween);
         }
     }

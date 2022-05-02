@@ -13,7 +13,7 @@ public class PlayerSelection : IUpdatable
     
     void IUpdatable.Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.GetMouseButtonDown(0))
         {
             int size = Physics.RaycastNonAlloc(_mainCamera.ScreenPointToRay(Input.mousePosition), _results);
 

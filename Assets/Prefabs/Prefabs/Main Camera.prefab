@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2997319999935307750}
   - component: {fileID: 2997319999935307745}
   - component: {fileID: 2997319999935307751}
+  - component: {fileID: 2997319999333247316}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -74,7 +75,7 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -181,3 +182,28 @@ MonoBehaviour:
     <LeftBorder>k__BackingField: 17.5
     <RightBorder>k__BackingField: 76.8
   _mainCamera: {fileID: 2997319999935307747}
+--- !u!114 &2997319999333247316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997319999935307773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb42831ee5422f409e7f24f9e7488ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: 0
+  renderingStrategy: 0
+  renderingMode: 1
+  outlineLayerMask: -1
+  primaryBufferSizeMode: 0
+  primaryRendererScale: 0.75
+  primarySizeReference: 800
+  blurShift: 1
+  dilateShift: 1
+  dilateIterations: 2
+  dilateQuality: 2
+  blurIterations: 1
+  blurType: 1
