@@ -1,12 +1,5 @@
 ﻿using UnityEngine;
 
-public class TowerBase : MonoBehaviour, ISelectable
+public class TowerBase : MonoBehaviour
 {
-    void ISelectable.Select()
-    {
-    }
-
-    void ISelectable.Unselect()
-    {
-    }
 }

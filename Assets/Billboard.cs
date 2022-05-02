@@ -2,16 +2,9 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    private Camera _mainCamera;
-    private Quaternion _startRotation;
-    
-    private void Start()
-    {
-        _mainCamera = Camera.main;
-        _startRotation = _mainCamera!.transform.rotation;
-    }
+    [SerializeField] private Camera _mainCamera;
 
-    private void Update()
+    public void Update()
     {
         MoveInFrontOfCamera();
         RotateToCamera();
