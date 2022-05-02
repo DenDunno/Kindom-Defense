@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class TowerRadar : MonoBehaviour
 {
-    private readonly List<Collider> _detectedEnemies = new List<Collider>();
-    public Collider ClosestEnemy { get; private set; }
+    private readonly List<Transform> _detectedEnemies = new List<Transform>();
+    
+    public Transform ClosestEnemy { get; private set; }
+    public bool HasTarget => ClosestEnemy != null;
 
     private void Update()
     {
@@ -14,10 +16,11 @@ public class TowerRadar : MonoBehaviour
     private void FindClosestEnemy()
     {
         float minDistanceToEnemy = float.MaxValue;
+        ClosestEnemy = null;
         
-        foreach (Collider detectedEnemy in _detectedEnemies)
+        foreach (Transform detectedEnemy in _detectedEnemies)
         {
-            float distanceToEnemy = (detectedEnemy.transform.position - transform.position).sqrMagnitude;
+            float distanceToEnemy = (detectedEnemy.position - transform.position).sqrMagnitude;
 
             if (distanceToEnemy < minDistanceToEnemy)
             {
@@ -29,11 +32,11 @@ public class TowerRadar : MonoBehaviour
 
     private void OnTriggerEnter(Collider enemy)
     {
-        _detectedEnemies.Add(enemy);
+        _detectedEnemies.Add(enemy.transform);
     }
 
     private void OnTriggerExit(Collider enemy)
     {
-        _detectedEnemies.Remove(enemy);
+        _detectedEnemies.Remove(enemy.transform);
     }
 }
