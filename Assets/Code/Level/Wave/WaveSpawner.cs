@@ -7,13 +7,14 @@ public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private WaveList _waveList;
     [SerializeField] private Kingdom _kingdom;
+    [SerializeField] private Camera _mainCamera;
     private Queue<Wave> _waves;
     private EnemiesSpawner _enemiesSpawner;
     
     private IEnumerator Start()
     {
         _waves = _waveList.Waves;
-        _enemiesSpawner = new EnemiesSpawner(_kingdom, this);
+        _enemiesSpawner = new EnemiesSpawner(_kingdom, this, _mainCamera);
 
         for (int i = 0; i < _waveList.Waves.Count; i++)
         {

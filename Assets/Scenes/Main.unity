@@ -7484,6 +7484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waveList: {fileID: 11400000, guid: 4528f5518472ecd479fb70e813a6327d, type: 2}
   _kingdom: {fileID: 1629115696}
+  _mainCamera: {fileID: 409210870}
 --- !u!1 &1575689313
 GameObject:
   m_ObjectHideFlags: 0
@@ -7571,7 +7572,6 @@ GameObject:
   - component: {fileID: 1629115695}
   - component: {fileID: 1629115697}
   - component: {fileID: 1629115696}
-  - component: {fileID: 1629115698}
   m_Layer: 0
   m_Name: Kindom
   m_TagString: Untagged
@@ -7618,19 +7618,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.295818, y: 4.62446, z: 4.963089}
   m_Center: {x: 0.55282784, y: 1.8122306, z: 0.22341156}
---- !u!114 &1629115698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629115694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17506a0da7e4e3087a6b7d401924805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 100
 --- !u!1001 &1669525833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7652,7 +7639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4595187489619055491, guid: ab213c656ebe3d546b52724e919cc65a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43
+      value: 47.44
       objectReference: {fileID: 0}
     - target: {fileID: 4595187489619055491, guid: ab213c656ebe3d546b52724e919cc65a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7660,7 +7647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4595187489619055491, guid: ab213c656ebe3d546b52724e919cc65a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.81
+      value: 19.83
       objectReference: {fileID: 0}
     - target: {fileID: 4595187489619055491, guid: ab213c656ebe3d546b52724e919cc65a, type: 3}
       propertyPath: m_LocalRotation.w

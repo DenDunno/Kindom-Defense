@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPoolableObject
 {
+    [SerializeField] private Damage _damage;
     private Transform _target;
     private const float _speed = 15f;
     
@@ -22,6 +23,9 @@ public class Bullet : MonoBehaviour, IPoolableObject
 
     private void OnTriggerEnter(Collider enemy)
     {
+        var enemyHealth = enemy.GetComponent<EnemyHealth>();
+        enemyHealth.TakeDamage(_damage.Value);
+        
         gameObject.SetActive(false);
         IsActive = false;
     }

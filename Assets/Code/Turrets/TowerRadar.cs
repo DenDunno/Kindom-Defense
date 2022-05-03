@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class TowerRadar : MonoBehaviour
 {
-    private readonly List<Transform> _detectedEnemies = new List<Transform>();
+    private readonly List<EnemyHealth> _detectedEnemies = new List<EnemyHealth>();
     
-    public Transform ClosestEnemy { get; private set; }
-    public bool HasTarget => ClosestEnemy != null;
+    public EnemyHealth ClosestEnemy { get; private set; }
+    public bool HasTarget => ClosestEnemy != null && ClosestEnemy.IsDead == false;
 
     private void Update()
     {
@@ -18,25 +18,28 @@ public class TowerRadar : MonoBehaviour
         float minDistanceToEnemy = float.MaxValue;
         ClosestEnemy = null;
         
-        foreach (Transform detectedEnemy in _detectedEnemies)
+        foreach (EnemyHealth detectedEnemy in _detectedEnemies)
         {
-            float distanceToEnemy = (detectedEnemy.position - transform.position).sqrMagnitude;
-
-            if (distanceToEnemy < minDistanceToEnemy)
+            if (detectedEnemy.IsDead == false)
             {
-                minDistanceToEnemy = distanceToEnemy;
-                ClosestEnemy = detectedEnemy;
+                float distanceToEnemy = (detectedEnemy.transform.position - transform.position).sqrMagnitude;
+
+                if (distanceToEnemy < minDistanceToEnemy)
+                {
+                    minDistanceToEnemy = distanceToEnemy;
+                    ClosestEnemy = detectedEnemy;
+                }
             }
         }
     }
 
     private void OnTriggerEnter(Collider enemy)
     {
-        _detectedEnemies.Add(enemy.transform);
+        _detectedEnemies.Add(enemy.GetComponent<EnemyHealth>());
     }
 
     private void OnTriggerExit(Collider enemy)
     {
-        _detectedEnemies.Remove(enemy.transform);
+        _detectedEnemies.Remove(enemy.GetComponent<EnemyHealth>());
     }
 }

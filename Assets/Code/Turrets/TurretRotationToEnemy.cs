@@ -20,7 +20,7 @@ public class TurretRotationToEnemy : IUpdatable
     
     private void RotateToEnemy()
     {
-        Quaternion rotation = Quaternion.LookRotation(_towerRadar.ClosestEnemy.position - _transform.position);
+        Quaternion rotation = Quaternion.LookRotation(_towerRadar.ClosestEnemy.transform.position - _transform.position);
 
         if (rotation.eulerAngles.x > _maxAngle)
             rotation = Quaternion.Euler(_maxAngle, rotation.eulerAngles.y, 0);
