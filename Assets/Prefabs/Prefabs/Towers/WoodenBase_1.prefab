@@ -451,8 +451,8 @@ GameObject:
   - component: {fileID: 261081485}
   - component: {fileID: 261081484}
   - component: {fileID: 261081483}
-  - component: {fileID: 261081486}
   - component: {fileID: 261081487}
+  - component: {fileID: 1069085710}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -541,19 +541,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &261081486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261081481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 182bda2fc51e5c84992aa56dd4b100ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 0}
 --- !u!114 &261081487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,7 +553,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47923e9112a643ccacc184a7b90f26c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _billboard: {fileID: 261081486}
+  _billboard: {fileID: 1069085710}
+--- !u!114 &1069085710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261081481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9ac3a44cc60164482c50061ed17995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 0}
 --- !u!1 &558529647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,6 +1490,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b7fbda0df794cb77676a98d68f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spinning: {fileID: 1809310223}
+  _towerRadar: {fileID: 7608980797793374468}
+  _bulletSpawnPosition: {x: -0.021, y: 0.13, z: 0.306}
+  _bulletPrefab: {fileID: 5421509208944171897, guid: 243986113cc132f43a255b50be869646, type: 3}
 --- !u!114 &7608980797793374468
 MonoBehaviour:
   m_ObjectHideFlags: 0

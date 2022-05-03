@@ -16,6 +16,11 @@ public static class EnumerableExtensions
         return stack.Count != 0;
     }
     
+    public static bool IsEmpty<T>(this Stack<T> stack)
+    {
+        return stack.Count == 0;
+    }
+    
     public static bool IsNotEmpty<T>(this Queue<T> queue)
     {
         return queue.Count != 0;

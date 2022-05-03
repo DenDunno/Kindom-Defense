@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level_1
   m_EditorClassIdentifier: 
   _waves:
-  - _delay: 4
-    _spawnRate: 15
+  - _delay: 0
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -25,6 +25,9 @@ MonoBehaviour:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
+  - _delay: 8
+    _spawnRate: 2
+    _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
@@ -34,6 +37,9 @@ MonoBehaviour:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
+  - _delay: 8
+    _spawnRate: 2
+    _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
@@ -43,6 +49,9 @@ MonoBehaviour:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
+  - _delay: 8
+    _spawnRate: 2
+    _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
@@ -52,6 +61,9 @@ MonoBehaviour:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
+  - _delay: 8
+    _spawnRate: 2
+    _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
@@ -61,12 +73,57 @@ MonoBehaviour:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
+  - _delay: 8
+    _spawnRate: 2
+    _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+  - _delay: 8
+    _spawnRate: 2
+    _enemies:
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+  - _delay: 8
+    _spawnRate: 2
+    _enemies:
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+  - _delay: 8
+    _spawnRate: 2
+    _enemies:
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+    - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
+      m_SubObjectName: 
+      m_SubObjectType: 
+  - _delay: 8
+    _spawnRate: 2
+    _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
       m_SubObjectType: 

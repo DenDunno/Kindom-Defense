@@ -1,0 +1,12 @@
+Version 1.2 (current): 
+- Added a lot of new documentation comments in code.
+- Optimized healthbars code, now it works faster on maps with big objects/healthbars count.
+- Stripped unused code from some scripts.
+- Improved example scene.
+- Added changelog file to the project to allow users see actual version changes.
+
+Version 1.1 - Mar 20, 2019:
+- Added parameter, which allows to automatically hide healthbars on 100% of unit health.
+
+Version 1.0 - 10 September, 2018:
+First release
