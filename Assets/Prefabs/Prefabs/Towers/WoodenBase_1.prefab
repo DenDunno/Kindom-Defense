@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b7fbda0df794cb77676a98d68f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spinning: {fileID: 1809310223}
+  _gatlingBarrel: {fileID: 1809310223}
   _towerRadar: {fileID: 7608980797793374468}
   _bulletSpawnPosition: {x: -0.021, y: 0.13, z: 0.306}
   _bulletPrefab: {fileID: 5421509208944171897, guid: 243986113cc132f43a255b50be869646, type: 3}
@@ -1744,7 +1744,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9c26e59e2de508409c577c9edfd4e23, type: 2}
+  - {fileID: 2100000, guid: 01ae39e4ee0192f4d9845c3571813c4c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1775,7 +1775,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7140065323540300126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81da3226bef242a6b6a73aaac68aecfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6dc4a6464d4b41138cf2b6787e692e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _towerRadar: {fileID: 7608980797793374468}
+  _meshRenderer: {fileID: 7140065323538374558}

@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class GatlingTurret : MonoBehaviour
 {
-    [SerializeField] private GatlingTurretSpinning _spinning;
+    [SerializeField] private GatlingBarrel _gatlingBarrel;
     [SerializeField] private TowerRadar _towerRadar;
     [SerializeField] private Vector3 _bulletSpawnPosition;
     [SerializeField] private Bullet _bulletPrefab;
-    private const float _rate = 0.5f;
-    private float _clock;
     private ObjectFactory<Bullet> _bulletFactory;
+    private const float _rate = 0.4f;
+    private float _clock;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class GatlingTurret : MonoBehaviour
 
     private void Update()
     {
-        if (_towerRadar.HasTarget && _spinning.ReadyForShooting)
+        if (_towerRadar.HasTarget && _gatlingBarrel.ReadyForShooting)
         {
             if (Time.time > _rate + _clock)
             {
@@ -32,7 +32,7 @@ public class GatlingTurret : MonoBehaviour
     {
         Bullet bullet = _bulletFactory.Create();
         bullet.transform.parent = transform;
-        bullet.transform.position = _spinning.transform.TransformPoint(_bulletSpawnPosition);
+        bullet.transform.position = _gatlingBarrel.transform.TransformPoint(_bulletSpawnPosition);
         bullet.Init(_towerRadar.ClosestEnemy.transform);   
     }
 }
