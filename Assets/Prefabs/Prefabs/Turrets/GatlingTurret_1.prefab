@@ -60,8 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gatlingBarrel: {fileID: 525040080924931351}
+  _turretHead: {fileID: 2698217996738543816}
   _towerRadar: {fileID: 7985399541769078300}
-  _bulletSpawnPosition: {x: -0.021, y: 0.13, z: 0.306}
+  _bulletSpawnPosition: {x: -0.021, y: 0.13, z: 0.2}
   _bulletPrefab: {fileID: 5421509208944171897, guid: 243986113cc132f43a255b50be869646, type: 3}
 --- !u!114 &7985399541769078300
 MonoBehaviour:

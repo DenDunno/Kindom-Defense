@@ -4,7 +4,7 @@ public class GatlingBarrelSpeed : IUpdatable
 {
     private readonly TowerRadar _towerRadar;
     private const float _targetRotationSpeed = 900f;
-    private const float _acceleration = 800f;
+    private const float _acceleration = 700f;
 
     public GatlingBarrelSpeed(TowerRadar towerRadar)
     {

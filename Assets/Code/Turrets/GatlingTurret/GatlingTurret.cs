@@ -3,6 +3,7 @@ using UnityEngine;
 public class GatlingTurret : MonoBehaviour
 {
     [SerializeField] private GatlingBarrel _gatlingBarrel;
+    [SerializeField] private TurretHead _turretHead;
     [SerializeField] private TowerRadar _towerRadar;
     [SerializeField] private Vector3 _bulletSpawnPosition;
     [SerializeField] private Bullet _bulletPrefab;
@@ -17,7 +18,7 @@ public class GatlingTurret : MonoBehaviour
 
     private void Update()
     {
-        if (_towerRadar.HasTarget && _gatlingBarrel.ReadyForShooting)
+        if (_towerRadar.HasTarget && _gatlingBarrel.ReadyForShooting && _turretHead.ReadyForShooting)
         {
             if (Time.time > _rate + _clock)
             {

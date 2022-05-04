@@ -5,6 +5,8 @@ public class TurretHead : MonoBehaviour
     [SerializeField] private TowerRadar _towerRadar;
     private TurretRotationToEnemy _rotationToEnemy;
     private TurretIdleAnimation _idleAnimation;
+
+    public bool ReadyForShooting => _rotationToEnemy.TurnedToEnemy;
     
     private void Start()
     {

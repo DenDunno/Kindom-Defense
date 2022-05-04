@@ -6,11 +6,24 @@ public class TowerRadar : MonoBehaviour
     private readonly List<EnemyHealth> _detectedEnemies = new List<EnemyHealth>();
     
     public EnemyHealth ClosestEnemy { get; private set; }
-    public bool HasTarget => ClosestEnemy != null && ClosestEnemy.IsDead == false;
+    public bool HasTarget => ClosestEnemy != null;
 
     private void Update()
     {
-        FindClosestEnemy();
+        if (_detectedEnemies.Contains(ClosestEnemy) == false || IsDead())
+        {
+            FindClosestEnemy();
+        }
+    }
+
+    private bool IsDead()
+    {
+        var result = true;
+
+        if (ClosestEnemy != null)
+            result = ClosestEnemy.IsDead;
+
+        return result;
     }
 
     private void FindClosestEnemy()

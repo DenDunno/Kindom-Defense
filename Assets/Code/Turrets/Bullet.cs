@@ -27,14 +27,19 @@ public class Bullet : MonoBehaviour, IPoolableObject
         if (enemyHealth.IsDead == false || _target.transform == enemyHealth.transform)
         {
             enemyHealth.TakeDamage(_damage.Value);
-        
-            gameObject.SetActive(false);
-            IsActive = false;   
+
+            ToggleBullet(false);   
         }
     }
 
     void IPoolableObject.ResetObject()
     {
-        IsActive = true;
+        ToggleBullet(true);
+    }
+
+    private void ToggleBullet(bool activate)
+    {
+        IsActive = activate;
+        gameObject.SetActive(activate);
     }
 }
