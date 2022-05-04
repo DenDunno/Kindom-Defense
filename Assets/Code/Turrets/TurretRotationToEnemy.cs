@@ -22,8 +22,8 @@ public class TurretRotationToEnemy : IUpdatable
     {
         Quaternion rotation = Quaternion.LookRotation(_towerRadar.ClosestEnemy.transform.position - _transform.position);
 
-        if (rotation.eulerAngles.x > _maxAngle)
-            rotation = Quaternion.Euler(_maxAngle, rotation.eulerAngles.y, 0);
+        // if (rotation.eulerAngles.x > _maxAngle)
+        //     rotation = Quaternion.Euler(_maxAngle, rotation.eulerAngles.y, 0);
 
         _transform.rotation = Quaternion.Lerp(_transform.rotation, rotation, _rotationToEnemySpeed * Time.deltaTime);
     }

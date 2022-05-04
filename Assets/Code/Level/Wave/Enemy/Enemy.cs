@@ -2,7 +2,24 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IPoolableObject
 {
-    [SerializeField] private EnemyHealth _enemyHealth;
+    [field: SerializeField] public EnemyStartup Startup { get; private set; }
+    [SerializeField] public EnemyRestart _restart;
 
-    public bool IsActive => _enemyHealth.IsDead == false;
+    public bool IsActive { get; private set; } = true;
+
+    private void Start()
+    {
+        _restart.Init();
+    }
+
+    public void ResetObject()
+    {
+        IsActive = true;
+        _restart.Execute();
+    }
+
+    public void MarkAsInactive()
+    {
+        IsActive = false;
+    }
 }

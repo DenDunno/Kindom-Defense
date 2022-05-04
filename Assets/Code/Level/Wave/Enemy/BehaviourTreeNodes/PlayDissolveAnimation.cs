@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 using Action = BehaviorDesigner.Runtime.Tasks.Action;
 
@@ -7,33 +7,21 @@ using Action = BehaviorDesigner.Runtime.Tasks.Action;
 public class PlayDissolveAnimation : Action
 {
     [SerializeField] private Renderer[] _renderers;
-    private MaterialPropertyBlock _dissolvePropertyBlock;
-    private const string _dissolveName = "_DissolveFactor";
     private const float _dissolveSpeed = 0.35f;
-    private const float _timeBeforeDissolving = 2f;
-    private int _dissolveId;
+    private float _dissolveAmount = 0;
+    private EnemyDissolve _enemyDissolve;
 
     public override void OnStart()
     {
-        _dissolveId = Shader.PropertyToID(_dissolveName);
-        _dissolvePropertyBlock = new MaterialPropertyBlock();
-
-        StartCoroutine(Dissolve());
+        _enemyDissolve = new EnemyDissolve(_renderers);
+        _dissolveAmount = 0;
     }
 
-    private IEnumerator Dissolve()
+    public override TaskStatus OnUpdate()
     {
-        yield return new WaitForSeconds(_timeBeforeDissolving);
-        
-        for (float dissolve = 0; dissolve < 1; dissolve += Time.deltaTime * _dissolveSpeed)
-        {
-            _dissolvePropertyBlock.SetFloat(_dissolveId, dissolve);
-        
-            _renderers.ForEach(renderer => renderer.SetPropertyBlock(_dissolvePropertyBlock));
+        _dissolveAmount += Time.deltaTime * _dissolveSpeed;
+        _enemyDissolve.SetDissolve(_dissolveAmount);
 
-            yield return null;
-        }
-        
-        gameObject.SetActive(false);
+        return _dissolveAmount >= 1 ? TaskStatus.Success : TaskStatus.Running;
     }
 }

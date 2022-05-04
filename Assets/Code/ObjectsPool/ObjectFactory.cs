@@ -23,7 +23,14 @@ public class ObjectFactory<T> : IUpdatable where T : MonoBehaviour, IPoolableObj
 
     private T SpawnOrPop()
     {
-        return _pool.IsEmpty() ? Object.Instantiate(_prefab) : _pool.Pop();
+        if (_pool.IsEmpty())
+        {
+            return Object.Instantiate(_prefab);
+        }
+        
+        T poolableObject = _pool.Pop();
+        poolableObject.ResetObject();
+        return poolableObject;
     }
 
     public void Update()

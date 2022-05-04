@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
+  _healthBar: {fileID: 780729398330022469}
 --- !u!1 &7557093569033354276
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +936,6 @@ GameObject:
   - component: {fileID: 7616738790210935296}
   - component: {fileID: 1597039403804799}
   - component: {fileID: 1597039403804800}
-  - component: {fileID: 329580890602034772}
   - component: {fileID: 8632261073159885262}
   m_Layer: 8
   m_Name: Knight
@@ -1024,12 +1024,13 @@ MonoBehaviour:
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(296,-49.0923767)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0.2999878,100.702988)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(-154.294357,116.147415)"},"ID":2,"Name":"Play
         run animation","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Run
         Forward In Place"},"Int32layer":-1,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityNavMeshAgent.SetDestination","NodeData":{"Offset":"(-1.77471924,120.555573)"},"ID":3,"Name":"Set
-        Destination","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3destination":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"KingdomPosition","IsShared":true,"Vector3mValue":"(50,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(150,120.555573)"},"ID":4,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(2.16918945,97.61284)"},"ID":5,"Name":"Inverter","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,103.472229)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CheckDeath","NodeData":{"Offset":"(-4.25064659,110.735741)"},"ID":7,"Name":"Check
-        Death","Instant":true,"EnemyHealth_enemyHealth":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(158.0693,114.895622)"},"ID":8,"Name":"Play
-        death animation","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Die"},"Int32layer":0,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityNavMeshAgent.Stop","NodeData":{"Offset":"(336.1005,114.992081)"},"ID":9,"Name":"Stop
-        NavMeshAgent","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"TurnOffParticles","NodeData":{"Offset":"(504.600952,113.116386)"},"ID":10,"Name":"Turn
-        Off Particles","Instant":true,"ParticleSystem[]_particleSystems":[1]},{"Type":"PlayDissolveAnimation","NodeData":{"Offset":"(683.298157,110.421104)"},"ID":11,"Name":"Play
-        Dissolve Animation","Instant":true,"Renderer[]_renderers":[2,3,4]}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"KingdomPosition","IsShared":true,"Vector3mValue":"(50,0,0)"}]}'
+        Destination","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3destination":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"KingdomPosition","IsShared":true,"Vector3mValue":"(50,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(150,120.555573)"},"ID":4,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(2.16918945,97.61284)"},"ID":5,"Name":"Inverter","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,103.472229)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CheckDeath","NodeData":{"Offset":"(-504.2502,110.735741)"},"ID":7,"Name":"Check
+        Death","Instant":true,"EnemyHealth_enemyHealth":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(-341.9302,114.895622)"},"ID":8,"Name":"Play
+        death animation","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Die"},"Int32layer":0,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityNavMeshAgent.Stop","NodeData":{"Offset":"(-163.899,114.992081)"},"ID":9,"Name":"Stop
+        NavMeshAgent","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"TurnOffParticles","NodeData":{"Offset":"(4.601383,113.116386)"},"ID":10,"Name":"Turn
+        Off Particles","Instant":true,"ParticleSystem[]_particleSystems":[1]},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(141.872513,106.72142)"},"ID":11,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"PlayDissolveAnimation","NodeData":{"Offset":"(299.5644,110.421104)"},"ID":12,"Name":"Play
+        Dissolve Animation","Instant":true,"Renderer[]_renderers":[2,3,4]},{"Type":"MarkEnemyAsInactive","NodeData":{"Offset":"(494.882568,105.535706)"},"ID":13,"Name":"Mark
+        Enemy As Inactive","Instant":true,"Enemy_enemy":5}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"KingdomPosition","IsShared":true,"Vector3mValue":"(50,0,0)"}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -1041,6 +1042,7 @@ MonoBehaviour:
         - {fileID: 7570069975539702426}
         - {fileID: 7544495113069345556}
         - {fileID: 7544567201292852370}
+        - {fileID: 8632261073159885262}
         byteData: 
         byteDataArray: 
       Version: 1.7.2
@@ -1068,26 +1070,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &329580890602034772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7557770102426321190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f4ebeeed2f405eb0886bb6e5b3b779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _behaviorTree: {fileID: 1597039403804799}
-  _healthBarCanvas: {fileID: 591435661789107750}
-  _billboard: {fileID: 1988990156530295722}
-  _renderers:
-  - {fileID: 7570069975539702426}
-  - {fileID: 7544567201292852370}
-  - {fileID: 7544495113069345556}
-  _enemyHealth: {fileID: 43210680113059682}
 --- !u!114 &8632261073159885262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,7 +1082,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e96df95dc14ca24c960f777214fca25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHealth: {fileID: 43210680113059682}
+  <Startup>k__BackingField:
+    _behaviorTree: {fileID: 1597039403804799}
+    _healthBarCanvas: {fileID: 591435661789107750}
+    _billboard: {fileID: 1988990156530295722}
+  _restart:
+    _behaviorTree: {fileID: 1597039403804799}
+    _renderers:
+    - {fileID: 7544567201292852370}
+    - {fileID: 7544495113069345556}
+    - {fileID: 7570069975539702426}
+    _enemyHealth: {fileID: 43210680113059682}
 --- !u!1 &7557885233301885470
 GameObject:
   m_ObjectHideFlags: 0
@@ -6434,6 +6426,17 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 7243042985131820983, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
   m_PrefabInstance: {fileID: 7832118888268222865}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &780729398330022469 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7378290240335678420, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
+  m_PrefabInstance: {fileID: 7832118888268222865}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de94cc641446ae45bf10224f3514f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1988990156530295722 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8586982006806966843, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}

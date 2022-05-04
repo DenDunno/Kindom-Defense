@@ -6,25 +6,14 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-    [SerializeField] private EnemyHealth _enemyHealth;
     [SerializeField] private MPImage _healthBarView;
     [SerializeField] private Gradient _gradient;
     private const float _animationDuration = 0.25f;
-    private Tween _animation;
+    private Tween _animation; 
 
-    private void OnEnable()
+    public void UpdateValue(float sliderValue)
     {
-        _enemyHealth.DamageTaken += OnDamageTaken;
-    }
-    
-    private void OnDisable()
-    {
-        _enemyHealth.DamageTaken -= OnDamageTaken;
-    }
-
-    private void OnDamageTaken(float sliderValue)
-    {
-        if (sliderValue == 0)
+        if (sliderValue <= 0)
         {
             gameObject.SetActive(false);
             return;

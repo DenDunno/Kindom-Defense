@@ -40,10 +40,8 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnEnemy(AssetReference enemyReference)
     {
         Enemy enemy = _enemiesFactory.Create(enemyReference);
+        enemy.Startup.Init(_kingdom.transform, _mainCamera);
         enemy.transform.parent = transform;
         enemy.transform.localPosition = Vector3.zero;
-        
-        var enemyStartup = enemy.GetComponent<EnemyStartup>();
-        enemyStartup.Init(_kingdom.transform, _mainCamera);
     }
 }

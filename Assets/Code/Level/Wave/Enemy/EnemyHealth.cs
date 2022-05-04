@@ -1,13 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float _health = 100;
+    [SerializeField] private HealthBar _healthBar;
     private float _maxHealth;
-    
-    public event Action Died;
-    public event Action<float> DamageTaken;
     
     public bool IsDead => _health <= 0;
 
@@ -18,19 +15,18 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _health -= damage;
-        
-        if (_health <= 0)
-        {
-            _health = 0;
-            Died?.Invoke();
-        }
-        
-        DamageTaken?.Invoke(_health / _maxHealth);
+        SetHealth(_health - damage);
     }
 
     public void ResetHealth()
     {
-        _health = _maxHealth;
+        _healthBar.gameObject.SetActive(true);
+        SetHealth(_maxHealth);
+    }
+
+    private void SetHealth(float health)
+    {
+        _health = health;
+        _healthBar.UpdateValue(_health / _maxHealth);
     }
 }
