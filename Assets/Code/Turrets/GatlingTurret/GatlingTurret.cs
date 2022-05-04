@@ -7,7 +7,7 @@ public class GatlingTurret : MonoBehaviour
     [SerializeField] private Vector3 _bulletSpawnPosition;
     [SerializeField] private Bullet _bulletPrefab;
     private ObjectFactory<Bullet> _bulletFactory;
-    private const float _rate = 0.4f;
+    private const float _rate = 0.3f;
     private float _clock;
 
     private void Start()

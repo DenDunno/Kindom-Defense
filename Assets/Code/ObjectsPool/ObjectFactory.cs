@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectFactory<T> : IUpdatable where T : MonoBehaviour
+public class ObjectFactory<T> : IUpdatable where T : MonoBehaviour, IPoolableObject
 {
     private readonly T _prefab;
     private readonly Stack<T> _pool = new Stack<T>();
@@ -30,9 +30,7 @@ public class ObjectFactory<T> : IUpdatable where T : MonoBehaviour
     {
         for (int i = 0 ; i < _activeObjects.Count; ++i)
         {
-            var poolableObject = (IPoolableObject) _activeObjects[i];
-            
-            if (poolableObject.IsActive == false)
+            if (_activeObjects[i].IsActive == false)
             {
                 _pool.Push(_activeObjects[i]);
                 _activeObjects.Remove(_activeObjects[i]);

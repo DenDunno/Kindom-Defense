@@ -8,13 +8,12 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private WaveList _waveList;
     [SerializeField] private Kingdom _kingdom;
     [SerializeField] private Camera _mainCamera;
+    [SerializeField] private EnemiesFactory _enemiesFactory;
     private Queue<Wave> _waves;
-    private EnemiesSpawner _enemiesSpawner;
     
     private IEnumerator Start()
     {
         _waves = _waveList.Waves;
-        _enemiesSpawner = new EnemiesSpawner(_kingdom, this, _mainCamera);
 
         for (int i = 0; i < _waveList.Waves.Count; i++)
         {
@@ -32,9 +31,19 @@ public class WaveSpawner : MonoBehaviour
 
             foreach (AssetReference enemyReference in wave.Enemies)
             {
-                _enemiesSpawner.Spawn(enemyReference);
+                SpawnEnemy(enemyReference);
                 yield return new WaitForSeconds(wave.SpawnRate);
             }
         }
+    }
+
+    private void SpawnEnemy(AssetReference enemyReference)
+    {
+        Enemy enemy = _enemiesFactory.Create(enemyReference);
+        enemy.transform.parent = transform;
+        enemy.transform.localPosition = Vector3.zero;
+        
+        var enemyStartup = enemy.GetComponent<EnemyStartup>();
+        enemyStartup.Init(_kingdom.transform, _mainCamera);
     }
 }

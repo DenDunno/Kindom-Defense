@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1541902039836980637}
   - component: {fileID: 6208504078270752253}
   - component: {fileID: 43210680113059682}
-  - component: {fileID: 2590114016829242121}
   m_Layer: 8
   m_Name: Centre
   m_TagString: Untagged
@@ -76,19 +75,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
---- !u!114 &2590114016829242121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6829847584740262453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e96df95dc14ca24c960f777214fca25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyHealth: {fileID: 43210680113059682}
 --- !u!1 &7557093569033354276
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +936,7 @@ GameObject:
   - component: {fileID: 1597039403804799}
   - component: {fileID: 1597039403804800}
   - component: {fileID: 329580890602034772}
+  - component: {fileID: 8632261073159885262}
   m_Layer: 8
   m_Name: Knight
   m_TagString: Untagged
@@ -1096,6 +1083,24 @@ MonoBehaviour:
   _behaviorTree: {fileID: 1597039403804799}
   _healthBarCanvas: {fileID: 591435661789107750}
   _billboard: {fileID: 1988990156530295722}
+  _renderers:
+  - {fileID: 7570069975539702426}
+  - {fileID: 7544567201292852370}
+  - {fileID: 7544495113069345556}
+  _enemyHealth: {fileID: 43210680113059682}
+--- !u!114 &8632261073159885262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7557770102426321190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e96df95dc14ca24c960f777214fca25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 43210680113059682}
 --- !u!1 &7557885233301885470
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,4 +28,9 @@ public class EnemyHealth : MonoBehaviour
         
         DamageTaken?.Invoke(_health / _maxHealth);
     }
+
+    public void ResetHealth()
+    {
+        _health = _maxHealth;
+    }
 }
