@@ -34,6 +34,6 @@ public class GatlingTurret : MonoBehaviour
         Bullet bullet = _bulletFactory.Create();
         bullet.transform.parent = transform;
         bullet.transform.position = _gatlingBarrel.transform.TransformPoint(_bulletSpawnPosition);
-        bullet.Init(_towerRadar.ClosestEnemy.transform);   
+        bullet.Init(_towerRadar.TargetEnemy.transform);   
     }
 }

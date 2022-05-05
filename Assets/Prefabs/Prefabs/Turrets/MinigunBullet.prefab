@@ -40,8 +40,8 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4293199936899915691}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: {fileID: 723507340724974829}
-  _trailRenderer: {fileID: 465164300856296533}
+  _trail: {fileID: 465164300856296533}
 --- !u!114 &723507340724974829
 MonoBehaviour:
   m_ObjectHideFlags: 0

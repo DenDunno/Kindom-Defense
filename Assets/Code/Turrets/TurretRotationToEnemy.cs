@@ -6,7 +6,7 @@ public class TurretRotationToEnemy : IUpdatable
     private readonly Transform _transform;
     private const float _maxAngle = 50;
     private const float _rotationToEnemySpeed = 8f;
-    private const float _turnedToEnemyDot = 0.95f;
+    private const float _turnedToEnemyDot = 0.99f;
     
     public TurretRotationToEnemy(TowerRadar towerRadar, Transform transform)
     {
@@ -23,7 +23,7 @@ public class TurretRotationToEnemy : IUpdatable
     
     private void RotateToEnemy()
     {
-        Quaternion rotation = Quaternion.LookRotation(_towerRadar.ClosestEnemy.transform.position - _transform.position);
+        Quaternion rotation = Quaternion.LookRotation(_towerRadar.TargetEnemy.transform.position - _transform.position);
 
         // if (rotation.eulerAngles.x > _maxAngle)
         //     rotation = Quaternion.Euler(_maxAngle, rotation.eulerAngles.y, 0);

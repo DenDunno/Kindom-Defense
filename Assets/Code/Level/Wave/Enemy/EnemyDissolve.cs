@@ -3,8 +3,8 @@
 public class EnemyDissolve
 {
     private readonly Renderer[] _renderers;
-    private MaterialPropertyBlock _materialPropertyBlock = new MaterialPropertyBlock();
-    private int _dissolveId;
+    private readonly MaterialPropertyBlock _materialPropertyBlock = new MaterialPropertyBlock();
+    private readonly int _dissolveId;
     
     public EnemyDissolve(Renderer[] renderers)
     {

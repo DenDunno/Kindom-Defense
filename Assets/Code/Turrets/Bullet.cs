@@ -1,17 +1,24 @@
+using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPoolableObject
 {
     [SerializeField] private Damage _damage;
+    [SerializeField] private TrailRenderer _trail;
     private Transform _target;
+    private const float _timeBeforeEmitting = 0.005f;
     private const float _speed = 15f;
 
     public bool IsActive { get; private set; } = true;
 
-    public void Init(Transform target)
+    public async void Init(Transform target)
     {
         _target = target;
         Update();
+
+        await UniTask.Delay(TimeSpan.FromSeconds(_timeBeforeEmitting));
+        _trail.emitting = true;
     }
 
     private void Update()
@@ -29,6 +36,7 @@ public class Bullet : MonoBehaviour, IPoolableObject
             enemyHealth.TakeDamage(_damage.Value);
 
             ToggleBullet(false);   
+            _trail.emitting = false;
         }
     }
 

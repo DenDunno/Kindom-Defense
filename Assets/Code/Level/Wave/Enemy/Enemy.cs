@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
         _restart.Init();
     }
 
-    public void ResetObject()
+    void IPoolableObject.ResetObject()
     {
         IsActive = true;
         _restart.Execute();

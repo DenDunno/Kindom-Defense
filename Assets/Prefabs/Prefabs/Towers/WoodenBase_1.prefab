@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 128641309}
   - component: {fileID: 128641311}
   - component: {fileID: 128641310}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 320184397}
   - component: {fileID: 320184396}
   - component: {fileID: 320184398}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Selectable (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 466148148}
   - component: {fileID: 466148150}
   - component: {fileID: 466148149}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Cross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 738598473}
   - component: {fileID: 738598472}
   - component: {fileID: 738598474}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Selectable (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 772579962}
   - component: {fileID: 772579961}
   - component: {fileID: 772579963}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Selectable (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 916983940}
   - component: {fileID: 916983945}
   - component: {fileID: 916983944}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 1369601807}
   - component: {fileID: 1369601809}
   - component: {fileID: 1369601808}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Cross (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 2049021600}
   - component: {fileID: 2049021599}
   - component: {fileID: 2049021601}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1350,7 +1350,7 @@ GameObject:
   - component: {fileID: 2056933572}
   - component: {fileID: 2056933571}
   - component: {fileID: 2056933573}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Selectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1561,7 +1561,7 @@ GameObject:
   - component: {fileID: 154659133}
   - component: {fileID: 1669525836}
   - component: {fileID: 1669525837}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WoodenBase_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

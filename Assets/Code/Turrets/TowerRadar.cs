@@ -1,58 +1,57 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TowerRadar : MonoBehaviour
 {
-    private readonly List<EnemyHealth> _detectedEnemies = new List<EnemyHealth>();
+    [SerializeField] private float _detectionRadius = 5;
+    private const int _enemyLayerMask = 1 << 8;
+    private readonly Collider[] _colliders = new Collider[5];
     
-    public EnemyHealth ClosestEnemy { get; private set; }
-    public bool HasTarget => ClosestEnemy != null;
+    public EnemyHealth TargetEnemy { get; private set; }
+    public bool HasTarget => TargetEnemy != null;
 
     private void Update()
     {
-        if (_detectedEnemies.Contains(ClosestEnemy) == false || IsDead())
+        if (NoTarget())
         {
-            FindClosestEnemy();
+            FindEnemy();
         }
     }
 
-    private bool IsDead()
+    private void FindEnemy()
     {
-        var result = true;
-
-        if (ClosestEnemy != null)
-            result = ClosestEnemy.IsDead;
-
-        return result;
-    }
-
-    private void FindClosestEnemy()
-    {
-        float minDistanceToEnemy = float.MaxValue;
-        ClosestEnemy = null;
+        int size = Physics.OverlapSphereNonAlloc(transform.position, _detectionRadius, _colliders, _enemyLayerMask);
+        TargetEnemy = null;
         
-        foreach (EnemyHealth detectedEnemy in _detectedEnemies)
+        for (var i = 0; i < size; ++i)
         {
-            if (detectedEnemy.IsDead == false)
+            var enemy = _colliders[i].GetComponent<EnemyHealth>();
+            
+            if (enemy.IsDead == false)
             {
-                float distanceToEnemy = (detectedEnemy.transform.position - transform.position).sqrMagnitude;
-
-                if (distanceToEnemy < minDistanceToEnemy)
-                {
-                    minDistanceToEnemy = distanceToEnemy;
-                    ClosestEnemy = detectedEnemy;
-                }
+                TargetEnemy = enemy;
             }
         }
     }
 
-    private void OnTriggerEnter(Collider enemy)
+    private bool NoTarget()
     {
-        _detectedEnemies.Add(enemy.GetComponent<EnemyHealth>());
+        bool noTarget = true;
+
+        if (TargetEnemy != null)
+        {
+            noTarget = TargetEnemy.IsDead || EnemyNotInRange();
+        }
+
+        return noTarget;
     }
 
-    private void OnTriggerExit(Collider enemy)
+    private bool EnemyNotInRange()
     {
-        _detectedEnemies.Remove(enemy.GetComponent<EnemyHealth>());
+        return Vector3.Distance(TargetEnemy.transform.position, transform.position) > _detectionRadius;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawSphere(transform.position, _detectionRadius);
     }
 }
