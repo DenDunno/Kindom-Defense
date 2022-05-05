@@ -1550,7 +1550,7 @@ MonoBehaviour:
         m_MethodName: BuildWeapon
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 525040079670406190, guid: a7d1706781ed5854e9b0086564c6f653, type: 3}
+          m_ObjectArgument: {fileID: 5494941660833661878, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
           m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0

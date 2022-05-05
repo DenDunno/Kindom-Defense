@@ -4,7 +4,7 @@ public class GatlingTurret : Weapon
 {
     [SerializeField] private GatlingBarrel _gatlingBarrel;
     [SerializeField] private TurretHead _turretHead;
-    [SerializeField] private Vector3 _bulletSpawnPosition;
+    [SerializeField] private Transform _bulletSpawnPosition;
     [SerializeField] private Bullet _bulletPrefab;
     private ObjectFactory<Bullet> _bulletFactory;
     private const float _rate = 0.3f;
@@ -32,7 +32,7 @@ public class GatlingTurret : Weapon
     {
         Bullet bullet = _bulletFactory.Create();
         bullet.transform.parent = transform;
-        bullet.transform.position = _gatlingBarrel.transform.TransformPoint(_bulletSpawnPosition);
+        bullet.transform.position = _bulletSpawnPosition.position;
         bullet.Init(enemy);   
     }
 }
