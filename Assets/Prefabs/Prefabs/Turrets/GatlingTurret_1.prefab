@@ -59,10 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b7fbda0df794cb77676a98d68f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gatlingBarrel: {fileID: 525040080924931351}
-  _turretHead: {fileID: 2698217996738543816}
   _towerRadar: {fileID: 7985399541769078300}
-  _bulletSpawnPosition: {x: 0.1115221, y: -0.08823538, z: -0.3}
+  _gatlingBarrel: {fileID: 525040080924931351}
+  _bulletSpawnPosition: {fileID: 0}
   _bulletPrefab: {fileID: 5421509208944171897, guid: 243986113cc132f43a255b50be869646, type: 3}
 --- !u!114 &7985399541769078300
 MonoBehaviour:
@@ -170,7 +169,6 @@ GameObject:
   - component: {fileID: 7232722446476593764}
   - component: {fileID: 7232722446473693764}
   - component: {fileID: 7232722446474692740}
-  - component: {fileID: 2698217996738543816}
   m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
@@ -242,19 +240,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2698217996738543816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7232722446476695108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 194f4313ed6048cfa3ad2cbc82f8fe61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _towerRadar: {fileID: 7985399541769078300}
 --- !u!1 &7232722446476695110
 GameObject:
   m_ObjectHideFlags: 0

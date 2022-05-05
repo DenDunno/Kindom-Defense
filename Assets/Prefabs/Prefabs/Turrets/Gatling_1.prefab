@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 5118944604662274306}
   - component: {fileID: 5494941660833661878}
   - component: {fileID: 5494941660833661881}
+  - component: {fileID: 2148913196544987287}
   m_Layer: 0
   m_Name: Gatling_1
   m_TagString: Untagged
@@ -202,7 +203,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5494941660833661880}
-  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 56.743156, y: 0.0000014305115, z: 16.930477}
   m_LocalScale: {x: 175, y: 175, z: 175}
   m_Children:
@@ -225,7 +226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerRadar: {fileID: 5494941660833661881}
   _gatlingBarrel: {fileID: 5061784592470411823}
-  _turretHead: {fileID: 7050648917135750097}
   _bulletSpawnPosition: {fileID: 8617533736361544428}
   _bulletPrefab: {fileID: 5421509208944171897, guid: 243986113cc132f43a255b50be869646, type: 3}
 --- !u!114 &5494941660833661881
@@ -241,6 +241,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detectionRadius: 15
+--- !u!114 &2148913196544987287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494941660833661880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ed6def064646378d36b4326224646e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerRadar: {fileID: 5494941660833661881}
+  _head: {fileID: 3188998535390496370}
+  _pillar: {fileID: 2831016332141302369}
 --- !u!1 &6970575671966200087
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +349,6 @@ GameObject:
   - component: {fileID: 3188998535390496370}
   - component: {fileID: 2016838495144752285}
   - component: {fileID: 9179636089978330343}
-  - component: {fileID: 7050648917135750097}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -407,19 +421,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7050648917135750097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050648917135750096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 194f4313ed6048cfa3ad2cbc82f8fe61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _towerRadar: {fileID: 5494941660833661881}
 --- !u!1 &8617533736361544431
 GameObject:
   m_ObjectHideFlags: 0

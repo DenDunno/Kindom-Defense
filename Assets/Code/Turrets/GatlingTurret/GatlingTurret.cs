@@ -3,7 +3,6 @@ using UnityEngine;
 public class GatlingTurret : Weapon
 {
     [SerializeField] private GatlingBarrel _gatlingBarrel;
-    [SerializeField] private TurretHead _turretHead;
     [SerializeField] private Transform _bulletSpawnPosition;
     [SerializeField] private Bullet _bulletPrefab;
     private ObjectFactory<Bullet> _bulletFactory;
@@ -17,7 +16,7 @@ public class GatlingTurret : Weapon
 
     protected override void UpdateWeapon(Transform targetEnemy)
     {
-        if (_gatlingBarrel.ReadyForShooting && _turretHead.ReadyForShooting)
+        if (_gatlingBarrel.ReadyForShooting)
         {
             if (Time.time > _rate + _clock)
             {
