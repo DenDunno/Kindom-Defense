@@ -20,8 +20,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void ResetHealth()
     {
-        _healthBar.gameObject.SetActive(true);
         SetHealth(_maxHealth);
+        _healthBar.gameObject.SetActive(false);
     }
 
     private void SetHealth(float health)

@@ -1,10 +1,9 @@
 using UnityEngine;
 
-public class GatlingTurret : MonoBehaviour
+public class GatlingTurret : Weapon
 {
     [SerializeField] private GatlingBarrel _gatlingBarrel;
     [SerializeField] private TurretHead _turretHead;
-    [SerializeField] private TowerRadar _towerRadar;
     [SerializeField] private Vector3 _bulletSpawnPosition;
     [SerializeField] private Bullet _bulletPrefab;
     private ObjectFactory<Bullet> _bulletFactory;
@@ -16,24 +15,24 @@ public class GatlingTurret : MonoBehaviour
         _bulletFactory = new ObjectFactory<Bullet>(_bulletPrefab);
     }
 
-    private void Update()
+    protected override void UpdateWeapon(Transform targetEnemy)
     {
-        if (_towerRadar.HasTarget && _gatlingBarrel.ReadyForShooting && _turretHead.ReadyForShooting)
+        if (_gatlingBarrel.ReadyForShooting && _turretHead.ReadyForShooting)
         {
             if (Time.time > _rate + _clock)
             {
                 _clock = Time.time;
                 _bulletFactory.Update();
-                SpawnBullet();
+                Shoot(targetEnemy.transform);
             }
         }
     }
 
-    private void SpawnBullet()
+    private void Shoot(Transform enemy)
     {
         Bullet bullet = _bulletFactory.Create();
         bullet.transform.parent = transform;
         bullet.transform.position = _gatlingBarrel.transform.TransformPoint(_bulletSpawnPosition);
-        bullet.Init(_towerRadar.TargetEnemy.transform);   
+        bullet.Init(enemy);   
     }
 }

@@ -13,6 +13,11 @@ public class HealthBar : MonoBehaviour
 
     public void UpdateValue(float sliderValue)
     {
+        if (gameObject.activeInHierarchy == false)
+        {
+            gameObject.SetActive(true);
+        }
+
         if (sliderValue <= 0)
         {
             gameObject.SetActive(false);
