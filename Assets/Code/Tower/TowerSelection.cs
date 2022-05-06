@@ -32,8 +32,7 @@ public class TowerSelection : MonoBehaviour
             
             if (_tower.HasWeapon)
             {
-                float detectionRadius = _tower.Weapon.GetComponent<WeaponRadar>().DetectionRadius;
-                _detectionRadius.localScale = Vector3.one * detectionRadius * 2;
+                _detectionRadius.localScale = Vector3.one * _tower.DetectionRadius * 2;
                 _detectionRadius.gameObject.SetActive(show);
                 towerMenu = _upgradeMenu;
             }

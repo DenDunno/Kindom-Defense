@@ -5,7 +5,7 @@ public class WeaponRotationToEnemy : IUpdatable
     private readonly WeaponRadar _weaponRadar;
     private readonly Transform _pillar;
     private readonly IWeaponHeadRotationToEnemy _weaponHeadRotationToEnemy;
-    private const float _rotationToEnemySpeed = 8;
+    private const float _rotationToEnemySpeed = 4;
 
     public WeaponRotationToEnemy(WeaponRadar weaponRadar, Transform pillar, IWeaponHeadRotationToEnemy weaponHeadRotationToEnemy)
     {

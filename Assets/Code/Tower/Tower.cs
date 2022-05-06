@@ -3,24 +3,24 @@
 public class Tower : MonoBehaviour
 {
     [SerializeField] private Transform _buildPosition;
-    private Weapon _weapon;
+    private WeaponPresenter _weaponPresenter;
 
-    public bool HasWeapon => _weapon != null;
-    public Weapon Weapon => _weapon;
+    public bool HasWeapon => _weaponPresenter != null;
+    public float DetectionRadius => _weaponPresenter.Radar.DetectionRadius;
     
-    public void BuildWeapon(Weapon weaponPrefab)
+    public void BuildWeapon(WeaponPresenter weaponPrefab)
     {
-        _weapon = Instantiate(weaponPrefab, _buildPosition.position, Quaternion.identity, transform);
+        _weaponPresenter = Instantiate(weaponPrefab, _buildPosition.position, Quaternion.identity, transform);
     }
 
-    public void UpgradeWeapon(Weapon weaponPrefab)
+    public void UpgradeWeapon()
     {
         DestroyWeapon();
-        BuildWeapon(weaponPrefab);
+     //   BuildWeapon(_weaponPresenter.up);
     }
     
     public void DestroyWeapon()
     {
-        Destroy(_weapon.gameObject);
+        Destroy(_weaponPresenter.gameObject);
     }
 }
