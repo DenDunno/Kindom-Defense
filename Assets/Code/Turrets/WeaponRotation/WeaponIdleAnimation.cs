@@ -4,7 +4,7 @@ public class WeaponIdleAnimation : IUpdatable
 {
     private readonly Transform _pillar;
     private readonly IWeaponHeadIdleAnimation _weaponHeadIdleAnimation;
-    private const float _rotationSpeed = 8f;
+    private const float _rotationSpeed = 12f;
 
     public WeaponIdleAnimation(Transform pillar, IWeaponHeadIdleAnimation weaponHeadIdleAnimation)
     {

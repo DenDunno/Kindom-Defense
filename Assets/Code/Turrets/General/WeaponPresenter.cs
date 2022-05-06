@@ -1,18 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WeaponPresenter : MonoBehaviour
 {
-    [SerializeField] private Weapon _weapon;
     [SerializeField] private WeaponRadar _weaponRadar;
-    [SerializeField] private WeaponUpgrade _weaponUpgrade;
+    [SerializeField] private WeaponPresenter _upgradedWeapon;
     
-    public Weapon Weapon => _weapon;
     public WeaponRadar Radar => _weaponRadar;
-    public WeaponUpgrade Upgrade => _weaponUpgrade;
-
-    private void Start()
-    {
-        throw new NotImplementedException();
-    }
+    public WeaponPresenter UpgradedWeapon => _upgradedWeapon;
 }

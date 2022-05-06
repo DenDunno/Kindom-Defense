@@ -3,17 +3,23 @@ using Cysharp.Threading.Tasks;
 using EPOOutline;
 using UnityEngine;
 
-public class TowerSelection : MonoBehaviour
+[Serializable]
+public class TowerSelection 
 {
     [SerializeField] private TowerMenu _selectionMenu;
     [SerializeField] private TowerMenu _upgradeMenu;
-    [SerializeField] private Tower _tower;
     [SerializeField] private Outlinable _outlinable;
     [SerializeField] private Transform _detectionRadius;
     private bool _isAnimation;
+    private bool _hasWeapon;
     
     public bool IsSelected { get; private set; }
 
+    public void HasWeapon(bool hasWeapon)
+    {
+        _hasWeapon = hasWeapon;
+    }
+    
     public void Select()
     {
         ToggleSelection(true);
@@ -30,9 +36,8 @@ public class TowerSelection : MonoBehaviour
         {
             TowerMenu towerMenu;
             
-            if (_tower.HasWeapon)
+            if (_hasWeapon)
             {
-                _detectionRadius.localScale = Vector3.one * _tower.DetectionRadius * 2;
                 _detectionRadius.gameObject.SetActive(show);
                 towerMenu = _upgradeMenu;
             }

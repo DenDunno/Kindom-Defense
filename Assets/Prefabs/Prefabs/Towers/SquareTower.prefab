@@ -275,13 +275,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659133}
-        m_TargetAssemblyTypeName: TowerBaseSelection, Assembly-CSharp
+      - m_Target: {fileID: 154659132}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 154659132}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+        m_MethodName: BuildWeapon
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3598615142931249213, guid: 3c698e83bdac81c4fbec49893b71d541, type: 3}
+          m_ObjectArgumentAssemblyTypeName: WeaponPresenter, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -728,8 +740,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659133}
-        m_TargetAssemblyTypeName: TowerBaseSelection, Assembly-CSharp
+      - m_Target: {fileID: 154659132}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -935,8 +947,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659133}
-        m_TargetAssemblyTypeName: TowerBaseSelection, Assembly-CSharp
+      - m_Target: {fileID: 154659132}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -1423,8 +1435,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659133}
-        m_TargetAssemblyTypeName: TowerBaseSelection, Assembly-CSharp
+      - m_Target: {fileID: 154659132}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -1630,8 +1642,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659133}
-        m_TargetAssemblyTypeName: TowerBaseSelection, Assembly-CSharp
+      - m_Target: {fileID: 154659132}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -1643,12 +1655,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 154659132}
-        m_TargetAssemblyTypeName: TowerBase, Assembly-CSharp
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
         m_MethodName: BuildWeapon
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5494941660833661878, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
+          m_ObjectArgument: {fileID: 5645206823764981441, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
+          m_ObjectArgumentAssemblyTypeName: WeaponPresenter, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2055,9 +2067,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659133}
-        m_TargetAssemblyTypeName: TowerBaseSelection, Assembly-CSharp
-        m_MethodName: Unselect
+      - m_Target: {fileID: 154659132}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+        m_MethodName: Upgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2068,20 +2080,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 154659132}
-        m_TargetAssemblyTypeName: TowerBase, Assembly-CSharp
-        m_MethodName: UpgradeWeapon
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 5821382636513451751, guid: 336b90c7f76cf4041a1c32bb8164a6d2, type: 3}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5171666085308667949}
-        m_TargetAssemblyTypeName: TowerUpgrade, Assembly-CSharp
-        m_MethodName: Upgrade
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+        m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2588,8 +2588,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659133}
-        m_TargetAssemblyTypeName: TowerBaseSelection, Assembly-CSharp
+      - m_Target: {fileID: 154659132}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -2643,8 +2643,6 @@ GameObject:
   - component: {fileID: 4595187489621479779}
   - component: {fileID: 7033827121691819930}
   - component: {fileID: 154659132}
-  - component: {fileID: 154659133}
-  - component: {fileID: 5171666085308667949}
   - component: {fileID: 1669525836}
   - component: {fileID: 1669525837}
   m_Layer: 0
@@ -2746,39 +2744,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66411f7e10cb41968f2180e0cb52d4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildPosition: {fileID: 8681399733684560427}
---- !u!114 &154659133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4595187489619546019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f52429ed4b440d985c2b6b40b1689f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _selectionMenu: {fileID: 916983944}
-  _upgradeMenu: {fileID: 9069842100765031402}
-  _tower: {fileID: 154659132}
-  _outlinable: {fileID: 1669525837}
   _detectionRadius: {fileID: 570963441}
---- !u!114 &5171666085308667949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4595187489619546019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926b0b337b97271458fd08fbc2340e6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 4595187489621479779}
-  _meshFilter: {fileID: 4595187489620382627}
-  _towerModels: {fileID: 11400000, guid: fe638e0a94a61ed41868be97faf6f25a, type: 2}
+  _buildPosition: {fileID: 8681399733684560427}
+  _towerUpgrade:
+    _meshRenderer: {fileID: 4595187489621479779}
+    _meshFilter: {fileID: 4595187489620382627}
+    _towerModels: {fileID: 11400000, guid: fe638e0a94a61ed41868be97faf6f25a, type: 2}
+  _towerSelection:
+    _selectionMenu: {fileID: 916983944}
+    _upgradeMenu: {fileID: 9069842100765031402}
+    _outlinable: {fileID: 1669525837}
+    _detectionRadius: {fileID: 570963441}
 --- !u!114 &1669525836
 MonoBehaviour:
   m_ObjectHideFlags: 0

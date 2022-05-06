@@ -5,8 +5,10 @@ public abstract class WeaponRotation : MonoBehaviour
     [SerializeField] private WeaponRadar _weaponRadar;
     [SerializeField] private Transform _head;
     [SerializeField] private Transform _pillar;
-    private IUpdatable _rotationToEnemy;
+    private WeaponRotationToEnemy _rotationToEnemy;
     private IUpdatable _idleAnimation;
+
+    public bool ReadyForShooting => _rotationToEnemy.TurnedToEnemy;
 
     private void Start()
     {

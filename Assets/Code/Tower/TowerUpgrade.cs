@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 
-public class TowerUpgrade : MonoBehaviour
+[Serializable]
+public class TowerUpgrade 
 {
     [SerializeField] private MeshRenderer _meshRenderer;
     [SerializeField] private MeshFilter _meshFilter;
