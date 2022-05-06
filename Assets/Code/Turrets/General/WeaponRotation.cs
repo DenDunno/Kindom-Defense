@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class WeaponRotation : MonoBehaviour
 {
-    [SerializeField] private TowerRadar _towerRadar;
+    [SerializeField] private WeaponRadar _weaponRadar;
     [SerializeField] private Transform _head;
     [SerializeField] private Transform _pillar;
     private IUpdatable _rotationToEnemy;
@@ -10,16 +10,16 @@ public abstract class WeaponRotation : MonoBehaviour
 
     private void Start()
     {
-        _rotationToEnemy = new WeaponRotationToEnemy(_towerRadar, _pillar, GetHeadRotationToEnemy(_towerRadar, _head));
+        _rotationToEnemy = new WeaponRotationToEnemy(_weaponRadar, _pillar, GetHeadRotationToEnemy(_weaponRadar, _head));
         _idleAnimation = new WeaponIdleAnimation(_pillar, GetHeadIdleAnimation(_head));
     }
 
     private void Update()
     {
-        IUpdatable updatable = _towerRadar.HasTarget ? _rotationToEnemy : _idleAnimation;
+        IUpdatable updatable = _weaponRadar.HasTarget ? _rotationToEnemy : _idleAnimation;
         updatable.Update();
     }
 
     protected abstract IWeaponHeadIdleAnimation GetHeadIdleAnimation(Transform head);
-    protected abstract IWeaponHeadRotationToEnemy GetHeadRotationToEnemy(TowerRadar towerRadar, Transform head);
+    protected abstract IWeaponHeadRotationToEnemy GetHeadRotationToEnemy(WeaponRadar weaponRadar, Transform head);
 }

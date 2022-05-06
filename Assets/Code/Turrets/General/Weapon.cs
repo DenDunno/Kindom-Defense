@@ -2,13 +2,13 @@
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] private TowerRadar _towerRadar;
-
+    [SerializeField] private WeaponRadar _weaponRadar;
+    
     private void Update()
     {
-        if (_towerRadar.HasTarget)
+        if (_weaponRadar.HasTarget)
         {
-            UpdateWeapon(_towerRadar.TargetEnemy.transform);
+            UpdateWeapon(_weaponRadar.TargetEnemy.transform);
         }
     }
 

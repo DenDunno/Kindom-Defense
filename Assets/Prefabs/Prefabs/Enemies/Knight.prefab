@@ -6312,15 +6312,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7243042985066094592, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7243042985066094592, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7243042985131820970, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243042985131820970, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7243042985131820982, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
       propertyPath: m_Pivot.x
@@ -6408,7 +6412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7243042985184783767, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7378290240335678420, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
       propertyPath: _enemyHealth

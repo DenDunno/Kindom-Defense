@@ -2,14 +2,14 @@
 
 public class WeaponRotationToEnemy : IUpdatable
 {
-    private readonly TowerRadar _towerRadar;
+    private readonly WeaponRadar _weaponRadar;
     private readonly Transform _pillar;
     private readonly IWeaponHeadRotationToEnemy _weaponHeadRotationToEnemy;
     private const float _rotationToEnemySpeed = 8;
 
-    public WeaponRotationToEnemy(TowerRadar towerRadar, Transform pillar, IWeaponHeadRotationToEnemy weaponHeadRotationToEnemy)
+    public WeaponRotationToEnemy(WeaponRadar weaponRadar, Transform pillar, IWeaponHeadRotationToEnemy weaponHeadRotationToEnemy)
     {
-        _towerRadar = towerRadar;
+        _weaponRadar = weaponRadar;
         _pillar = pillar;
         _weaponHeadRotationToEnemy = weaponHeadRotationToEnemy;
     }
@@ -22,7 +22,7 @@ public class WeaponRotationToEnemy : IUpdatable
 
     private void RotatePillarToEnemy()
     {
-        Quaternion lookAtRotation = Quaternion.LookRotation(_towerRadar.TargetEnemy.transform.position - _pillar.position);
+        Quaternion lookAtRotation = Quaternion.LookRotation(_weaponRadar.TargetEnemy.transform.position - _pillar.position);
         
         lookAtRotation = Quaternion.Euler(0, lookAtRotation.eulerAngles.y, 0);
         

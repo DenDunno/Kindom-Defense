@@ -2,25 +2,28 @@
 
 public class GatlingBarrel : MonoBehaviour
 {
-    [SerializeField] private TowerRadar _towerRadar;
+    [SerializeField] private WeaponRadar _weaponRadar;
     [SerializeField] private MeshRenderer _meshRenderer;
     private GatlingBarrelSpeed _gatlingBarrelSpeed;
-    private Dependencies _dependencies;
+    private IUpdatable[] _updatables;
     
     public bool ReadyForShooting => _gatlingBarrelSpeed.SpeedRatio >= 1;
 
     private void Start()
     {
-        _dependencies = new Dependencies(new object[]
+        _updatables = new IUpdatable[]
         {
-            _gatlingBarrelSpeed = new GatlingBarrelSpeed(_towerRadar),
+            _gatlingBarrelSpeed = new GatlingBarrelSpeed(_weaponRadar),
             new GatlingBarrelHeating(_meshRenderer, _gatlingBarrelSpeed),
             new GatlingBarrelSpinning(transform, _gatlingBarrelSpeed)
-        });
+        };
     }
 
     private void Update()
     {
-        _dependencies.UpdateForEach();
+        foreach (IUpdatable updatable in _updatables)
+        {
+            updatable.Update();
+        }
     }
 }

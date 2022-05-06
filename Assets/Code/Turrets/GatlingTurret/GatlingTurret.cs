@@ -5,8 +5,8 @@ public class GatlingTurret : Weapon
     [SerializeField] private GatlingBarrel _gatlingBarrel;
     [SerializeField] private Transform _bulletSpawnPosition;
     [SerializeField] private Bullet _bulletPrefab;
+    [SerializeField] private float _rate = 0.3f;
     private ObjectFactory<Bullet> _bulletFactory;
-    private const float _rate = 0.3f;
     private float _clock;
 
     private void Start()

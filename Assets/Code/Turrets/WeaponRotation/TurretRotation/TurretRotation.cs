@@ -7,8 +7,8 @@ public class TurretRotation : WeaponRotation
         return new TurretHeadIdleAnimation(head);
     }
 
-    protected override IWeaponHeadRotationToEnemy GetHeadRotationToEnemy(TowerRadar towerRadar, Transform head)
+    protected override IWeaponHeadRotationToEnemy GetHeadRotationToEnemy(WeaponRadar weaponRadar, Transform head)
     {
-        return new TurretHeadRotationToEnemy(towerRadar, head);
+        return new TurretHeadRotationToEnemy(weaponRadar, head);
     }
 }

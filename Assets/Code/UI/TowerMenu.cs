@@ -2,7 +2,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class TowerSelectionMenu : MonoBehaviour
+public class TowerMenu : MonoBehaviour
 {
     [SerializeField] private Billboard _billboard;
     private const float _showDuration = 1f;

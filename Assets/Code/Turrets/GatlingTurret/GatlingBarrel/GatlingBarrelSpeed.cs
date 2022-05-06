@@ -2,13 +2,13 @@
 
 public class GatlingBarrelSpeed : IUpdatable
 {
-    private readonly TowerRadar _towerRadar;
+    private readonly WeaponRadar _weaponRadar;
     private const float _targetRotationSpeed = 900f;
     private const float _acceleration = 700f;
 
-    public GatlingBarrelSpeed(TowerRadar towerRadar)
+    public GatlingBarrelSpeed(WeaponRadar weaponRadar)
     {
-        _towerRadar = towerRadar;
+        _weaponRadar = weaponRadar;
     }
 
     public float Value { get; private set; }
@@ -17,7 +17,7 @@ public class GatlingBarrelSpeed : IUpdatable
 
     void IUpdatable.Update()
     {
-        if (_towerRadar.HasTarget)
+        if (_weaponRadar.HasTarget)
         {
             TryAddAcceleration(Value < _targetRotationSpeed, _acceleration);
         }

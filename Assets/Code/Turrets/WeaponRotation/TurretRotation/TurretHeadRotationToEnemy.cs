@@ -2,20 +2,20 @@
 
 public class TurretHeadRotationToEnemy : IWeaponHeadRotationToEnemy
 {
-    private readonly TowerRadar _towerRadar;
+    private readonly WeaponRadar _weaponRadar;
     private readonly Transform _head;
     private const float _maxAngle = 30;
     private const float _rotationToEnemySpeed = 8;
 
-    public TurretHeadRotationToEnemy(TowerRadar towerRadar, Transform head)
+    public TurretHeadRotationToEnemy(WeaponRadar weaponRadar, Transform head)
     {
-        _towerRadar = towerRadar;
+        _weaponRadar = weaponRadar;
         _head = head;
     }
     
     void IWeaponHeadRotationToEnemy.RotateHeadToEnemy()
     {
-        float xRotation = Quaternion.LookRotation(_towerRadar.TargetEnemy.transform.position - _head.position).eulerAngles.x;
+        float xRotation = Quaternion.LookRotation(_weaponRadar.TargetEnemy.transform.position - _head.position).eulerAngles.x;
 
         if (xRotation > _maxAngle)
             xRotation = _maxAngle;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TowerRadar : MonoBehaviour
+public class WeaponRadar : MonoBehaviour
 {
     [SerializeField] private float _detectionRadius = 5;
     private const int _enemyLayerMask = 1 << 8;
@@ -8,7 +8,8 @@ public class TowerRadar : MonoBehaviour
     
     public EnemyHealth TargetEnemy { get; private set; }
     public bool HasTarget => TargetEnemy != null;
-
+    public float DetectionRadius => _detectionRadius;
+    
     private void Update()
     {
         if (NoTarget())
