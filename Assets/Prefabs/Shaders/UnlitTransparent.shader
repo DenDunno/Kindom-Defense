@@ -2,8 +2,6 @@ Shader "Unlit/UnlitTransparent"
 {
 	Properties
 	{
-		_MainTex ("Texture", 2D) = "white" {}
-		_Alpha ("Alpha", Range(0.0, 1.0)) = 1
 		[HDR] _Color ("Color", Color) = (1, 1, 1, 1)
 	}
 	SubShader
@@ -36,7 +34,6 @@ Shader "Unlit/UnlitTransparent"
 			};
 
 			sampler2D _MainTex;
-			float _Alpha;
 			float4 _MainTex_ST;
 			fixed4 _Color;
 			
@@ -51,10 +48,15 @@ Shader "Unlit/UnlitTransparent"
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				fixed4 color = tex2D(_MainTex, i.uv);
-				color *= _Color;
-				color.a *= _Alpha;
-				return color;
+				float x = i.uv.x;
+				float y = i.uv.y;
+				
+				float dis = sqrt(pow((0.5 - x), 2) + pow((0.5 - y), 2));
+				
+                if (dis > 0.5) 
+                    discard;
+				
+				return _Color;
 			}
 			ENDCG
 		}
