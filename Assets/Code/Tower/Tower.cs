@@ -14,20 +14,25 @@ public class Tower : MonoBehaviour
     {
         _weaponPresenter = Instantiate(weaponPrefab, _buildPosition.position, Quaternion.identity, transform);
         _detectionRadius.localScale = Vector3.one * (_weaponPresenter.Radar.DetectionRadius * 2);
-        _towerSelection.HasWeapon(true);
     }
 
     public void Upgrade()
     {
         _towerUpgrade.Upgrade();
+        WeaponPresenter upgradedWeapon = _weaponPresenter.UpgradedWeapon;
         DestroyWeapon();
-        BuildWeapon(_weaponPresenter.UpgradedWeapon);
+        BuildWeapon(upgradedWeapon);
+    }
+
+    public void Sold()
+    {
+        DestroyWeapon();
+        _towerUpgrade.ReturnStartView();
     }
 
     private void DestroyWeapon()
     {
         Destroy(_weaponPresenter.gameObject);
-        _towerSelection.HasWeapon(false);
     }
 
     public void Select()

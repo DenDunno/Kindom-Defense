@@ -11,7 +11,7 @@ public class TowerUpgrade
     
     public void Upgrade()
     {
-        SetTowerView(++_upgradeIndex);
+        SetTowerView(_upgradeIndex + 1);
     }
 
     public void ReturnStartView()
@@ -21,6 +21,7 @@ public class TowerUpgrade
 
     private void SetTowerView(int upgradeIndex)
     {
+        _upgradeIndex = upgradeIndex;
         Model model = _towerModels.GetTowerModel(upgradeIndex);
         _meshFilter.mesh = model.Mesh;
         _meshRenderer.material = model.Material;

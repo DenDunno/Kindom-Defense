@@ -6,20 +6,13 @@ using UnityEngine;
 [Serializable]
 public class TowerSelection 
 {
-    [SerializeField] private TowerMenu _selectionMenu;
-    [SerializeField] private TowerMenu _upgradeMenu;
-    [SerializeField] private Outlinable _outlinable;
+    [SerializeField] private TowerMenu _menu;
     [SerializeField] private Transform _detectionRadius;
+    [SerializeField] private Outlinable _outlinable;
     private bool _isAnimation;
-    private bool _hasWeapon;
-    
+
     public bool IsSelected { get; private set; }
 
-    public void HasWeapon(bool hasWeapon)
-    {
-        _hasWeapon = hasWeapon;
-    }
-    
     public void Select()
     {
         ToggleSelection(true);
@@ -34,22 +27,12 @@ public class TowerSelection
     {
         if (IsSelected == !show && _isAnimation == false)
         {
-            TowerMenu towerMenu;
-            
-            if (_hasWeapon)
-            {
-                _detectionRadius.gameObject.SetActive(show);
-                towerMenu = _upgradeMenu;
-            }
-            else
-            {
-                towerMenu = _selectionMenu;
-            }
-            
-            Func<UniTask> tween = show ? (Func<UniTask>)towerMenu.Show : towerMenu.Hide;
-
+            Func<UniTask> tween = show ? (Func<UniTask>)_menu.Show : _menu.Hide;
             IsSelected = !IsSelected;
+
+            _menu.SetUI(IsSelected);
             _outlinable.enabled = IsSelected;
+            
             await PlayAnimation(tween);
         }
     }

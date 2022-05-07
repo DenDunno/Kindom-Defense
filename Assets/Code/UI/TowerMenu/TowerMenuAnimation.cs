@@ -1,10 +1,13 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TowerMenu : MonoBehaviour
+[Serializable]
+public class TowerMenuAnimation
 {
+    [SerializeField] private RectTransform _menu;
     [SerializeField] private Billboard _billboard;
     [SerializeField] private GraphicRaycaster _graphicRaycaster;
     private const float _showDuration = 1f;
@@ -14,15 +17,15 @@ public class TowerMenu : MonoBehaviour
     public async UniTask Show()
     {
         _billboard.Update();
-        gameObject.SetActive(true);
-        await transform.DOScale(_targetScale, _showDuration).SetEase(Ease.OutBack).AsyncWaitForCompletion();
+        _menu.gameObject.SetActive(true);
+        await _menu.DOScale(_targetScale, _showDuration).SetEase(Ease.OutBack).AsyncWaitForCompletion();
         _graphicRaycaster.enabled = true;
     }
     
     public async UniTask Hide()
     {
         _graphicRaycaster.enabled = false;
-        await transform.DOScale(0f, _hideDuration).SetEase(Ease.InBack).AsyncWaitForCompletion();
-        gameObject.SetActive(false);
+        await _menu.DOScale(0f, _hideDuration).SetEase(Ease.InBack).AsyncWaitForCompletion();
+        _menu.gameObject.SetActive(false);
     }
 }

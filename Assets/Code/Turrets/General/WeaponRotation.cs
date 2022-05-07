@@ -13,7 +13,7 @@ public abstract class WeaponRotation : MonoBehaviour
     private void Start()
     {
         _rotationToEnemy = new WeaponRotationToEnemy(_weaponRadar, _pillar, GetHeadRotationToEnemy(_weaponRadar, _head));
-        _idleAnimation = new WeaponIdleAnimation(_pillar, GetHeadIdleAnimation(_head));
+        _idleAnimation = new WeaponIdleAnimation(_pillar, _head, IdleAngle);
     }
 
     private void Update()
@@ -22,6 +22,6 @@ public abstract class WeaponRotation : MonoBehaviour
         updatable.Update();
     }
 
-    protected abstract IWeaponHeadIdleAnimation GetHeadIdleAnimation(Transform head);
+    protected abstract float IdleAngle { get; }
     protected abstract IWeaponHeadRotationToEnemy GetHeadRotationToEnemy(WeaponRadar weaponRadar, Transform head);
 }

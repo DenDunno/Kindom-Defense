@@ -10,9 +10,9 @@ public class WeaponRotationToEnemy : IUpdatable
 
     public WeaponRotationToEnemy(WeaponRadar weaponRadar, Transform pillar, IWeaponHeadRotationToEnemy weaponHeadRotationToEnemy)
     {
+        _weaponHeadRotationToEnemy = weaponHeadRotationToEnemy;
         _weaponRadar = weaponRadar;
         _pillar = pillar;
-        _weaponHeadRotationToEnemy = weaponHeadRotationToEnemy;
     }
 
     public bool TurnedToEnemy { get; private set; }
