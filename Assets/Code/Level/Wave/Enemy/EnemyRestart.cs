@@ -7,7 +7,7 @@ public class EnemyRestart
 {
     [SerializeField] private BehaviorTree _behaviorTree;
     [SerializeField] private Renderer[] _renderers;
-    [SerializeField] private EnemyHealth _enemyHealth;
+    [SerializeField] private Health _health;
     private EnemyDissolve _enemyDissolve;
     
     public void Init()
@@ -18,7 +18,7 @@ public class EnemyRestart
     public void Execute()
     {
         _behaviorTree.OnBehaviorRestarted();
-        _enemyHealth.ResetHealth();
+        _health.ResetHealth();
         _enemyDissolve.SetDissolve(0);
     }
 }

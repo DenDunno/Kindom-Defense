@@ -8,7 +8,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (_weaponRadar.HasTarget)
         {
-            UpdateWeapon(_weaponRadar.TargetEnemy.transform);
+            UpdateWeapon(_weaponRadar.Target.transform);
         }
     }
 

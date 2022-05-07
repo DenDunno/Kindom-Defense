@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IPoolableObject
 {
-    [SerializeField] private Damage _damage;
+    [SerializeField] private float _damage = 15;
     [SerializeField] private TrailRenderer _trail;
     private Transform _target;
     private const float _timeBeforeEmitting = 0.005f;
@@ -29,11 +29,11 @@ public class Bullet : MonoBehaviour, IPoolableObject
 
     private void OnTriggerEnter(Collider enemy)
     {
-        var enemyHealth = enemy.GetComponent<EnemyHealth>();
+        var enemyHealth = enemy.GetComponent<Health>();
         
         if (enemyHealth.IsDead == false || _target.transform == enemyHealth.transform)
         {
-            enemyHealth.TakeDamage(_damage.Value);
+            enemyHealth.TakeDamage(_damage);
 
             ToggleBullet(false);   
             _trail.emitting = false;

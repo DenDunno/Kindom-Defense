@@ -5,10 +5,10 @@ using UnityEngine;
 [Serializable]
 public class CheckDeath : Conditional
 {
-    [SerializeField] private EnemyHealth _enemyHealth;
+    [SerializeField] private Health _health;
 
     public override TaskStatus OnUpdate()
     {
-        return _enemyHealth.IsDead ? TaskStatus.Success : TaskStatus.Failure;
+        return _health.IsDead ? TaskStatus.Success : TaskStatus.Failure;
     }
 }

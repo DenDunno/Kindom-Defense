@@ -25,7 +25,7 @@ public class WeaponRotationToEnemy : IUpdatable
 
     private void RotatePillarToEnemy()
     {
-        Quaternion lookAtRotation = Quaternion.LookRotation(_weaponRadar.TargetEnemy.transform.position - _pillar.position);
+        Quaternion lookAtRotation = Quaternion.LookRotation(_weaponRadar.Target.transform.position - _pillar.position);
 
         TurnedToEnemy = Mathf.Abs(lookAtRotation.eulerAngles.y - _pillar.rotation.eulerAngles.y) < _turnedToEnemyAngle;
         

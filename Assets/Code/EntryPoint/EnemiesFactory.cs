@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class EnemiesFactory : MonoBehaviour
+public class EnemiesFactory : IUpdatable
 {
-    [SerializeField] private List<AssetReference> _enemiesUsedInLevel;
-    
-    private readonly Dictionary<string, ObjectFactory<Enemy>> _enemiesFactories = 
-        new Dictionary<string, ObjectFactory<Enemy>>();
+    private readonly List<AssetReference> _enemiesUsedInLevel;
+    private readonly Dictionary<string, ObjectFactory<Enemy>> _enemiesFactories = new Dictionary<string, ObjectFactory<Enemy>>();
+
+    public EnemiesFactory(List<AssetReference> enemiesUsedInLevel)
+    {
+        _enemiesUsedInLevel = enemiesUsedInLevel;
+    }
 
     public async void LoadEnemies()
     {
@@ -18,13 +21,13 @@ public class EnemiesFactory : MonoBehaviour
             _enemiesFactories[enemyReference.AssetGUID] = new ObjectFactory<Enemy>(enemyStartup);
         }
     }
-    
+
     public Enemy Create(AssetReference enemyReference)
     {
         return _enemiesFactories[enemyReference.AssetGUID].Create();
     }
 
-    private void Update()
+    void IUpdatable.Update()
     {
         foreach (ObjectFactory<Enemy> enemyFactory in _enemiesFactories.Values)
         {

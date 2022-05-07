@@ -1025,7 +1025,7 @@ MonoBehaviour:
         run animation","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Run
         Forward In Place"},"Int32layer":-1,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityNavMeshAgent.SetDestination","NodeData":{"Offset":"(-1.77472019,102.698441)"},"ID":3,"Name":"Set
         Destination","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3destination":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"KingdomPosition","IsShared":true,"Vector3mValue":"(50,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(121.428589,102.698441)"},"ID":4,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(2.16918945,97.61284)"},"ID":5,"Name":"Inverter","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-2.21905518,96.813446)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-74.46813,112.553215)"},"ID":7,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-61.2323456,101.640564)"},"ID":8,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CheckDeath","NodeData":{"Offset":"(-356.796173,110.735741)"},"ID":9,"Name":"Check
-        Death","Instant":true,"EnemyHealth_enemyHealth":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(-226.734222,114.895622)"},"ID":10,"Name":"Play
+        Death","Instant":true,"Health_health":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(-226.734222,114.895622)"},"ID":10,"Name":"Play
         death animation","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Die"},"Int32layer":0,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityNavMeshAgent.Stop","NodeData":{"Offset":"(-80.9610443,114.992081)"},"ID":11,"Name":"Stop
         NavMeshAgent","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"TurnOffParticles","NodeData":{"Offset":"(69.17019,113.116386)"},"ID":12,"Name":"Turn
         Off Particles","Instant":true,"ParticleSystem[]_particleSystems":[1]},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(190.312286,106.72142)"},"ID":13,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"PlayDissolveAnimation","NodeData":{"Offset":"(331.875153,110.421104)"},"ID":14,"Name":"Play
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e96df95dc14ca24c960f777214fca25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Startup>k__BackingField:
+  _startup:
     _behaviorTree: {fileID: 1597039403804799}
     _healthBarCanvas: {fileID: 591435661789107750}
     _billboard: {fileID: 1988990156530295722}
@@ -1093,7 +1093,9 @@ MonoBehaviour:
     - {fileID: 7544567201292852370}
     - {fileID: 7544495113069345556}
     - {fileID: 7570069975539702426}
-    _enemyHealth: {fileID: 43210680113059682}
+    _health: {fileID: 43210680113059682}
+  _health: {fileID: 43210680113059682}
+  _reward: 3
 --- !u!1 &7557885233301885470
 GameObject:
   m_ObjectHideFlags: 0
@@ -6326,6 +6328,10 @@ PrefabInstance:
     - target: {fileID: 7243042985131820970, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243042985131820980, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7243042985131820982, guid: 5182a37e65b043441b95f1759b1fe948, type: 3}
       propertyPath: m_Pivot.x

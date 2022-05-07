@@ -6,8 +6,8 @@ public class WeaponRadar : MonoBehaviour
     private const int _enemyLayerMask = 1 << 8;
     private readonly Collider[] _colliders = new Collider[5];
     
-    public EnemyHealth TargetEnemy { get; private set; }
-    public bool HasTarget => TargetEnemy != null;
+    public Health Target { get; private set; }
+    public bool HasTarget => Target != null;
     public float DetectionRadius => _detectionRadius;
     
     private void Update()
@@ -21,15 +21,15 @@ public class WeaponRadar : MonoBehaviour
     private void FindEnemy()
     {
         int size = Physics.OverlapSphereNonAlloc(transform.position, _detectionRadius, _colliders, _enemyLayerMask);
-        TargetEnemy = null;
+        Target = null;
         
         for (var i = 0; i < size; ++i)
         {
-            var enemy = _colliders[i].GetComponent<EnemyHealth>();
+            var enemy = _colliders[i].GetComponent<Health>();
             
             if (enemy.IsDead == false)
             {
-                TargetEnemy = enemy;
+                Target = enemy;
             }
         }
     }
@@ -38,9 +38,9 @@ public class WeaponRadar : MonoBehaviour
     {
         bool noTarget = true;
 
-        if (TargetEnemy != null)
+        if (Target != null)
         {
-            noTarget = TargetEnemy.IsDead || EnemyNotInRange();
+            noTarget = Target.IsDead || EnemyNotInRange();
         }
 
         return noTarget;
@@ -48,7 +48,7 @@ public class WeaponRadar : MonoBehaviour
 
     private bool EnemyNotInRange()
     {
-        return Vector3.Distance(TargetEnemy.transform.position, transform.position) > _detectionRadius;
+        return Vector3.Distance(Target.transform.position, transform.position) > _detectionRadius;
     }
 
     private void OnDrawGizmosSelected()

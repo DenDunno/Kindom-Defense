@@ -7,9 +7,15 @@ public class Tower : MonoBehaviour
     [SerializeField] private TowerUpgrade _towerUpgrade;
     [SerializeField] private TowerSelection _towerSelection;
     private WeaponPresenter _weaponPresenter;
-
+    private PlayerGold _playerGold;
+    
     public bool IsSelected => _towerSelection.IsSelected;
 
+    public void Init(PlayerGold playerGold)
+    {
+        _playerGold = playerGold;
+    }
+    
     public void BuildWeapon(WeaponPresenter weaponPrefab)
     {
         _weaponPresenter = Instantiate(weaponPrefab, _buildPosition.position, Quaternion.identity, transform);

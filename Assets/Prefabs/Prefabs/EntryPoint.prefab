@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1680321382444620490}
   - component: {fileID: 1680321382444620489}
-  - component: {fileID: 1002568328}
   m_Layer: 0
   m_Name: EntryPoint
   m_TagString: Untagged
@@ -44,20 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab96bceff3729a4ebb7d289b83157b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemiesFactory: {fileID: 1002568328}
---- !u!114 &1002568328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680321382444620491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d93ea07763eeba43a0099ec4a43390b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemiesUsedInLevel:
-  - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
-    m_SubObjectName: 
-    m_SubObjectType: 
+  _waveSpawners: []
+  _enemiesUsedInLevel: []
