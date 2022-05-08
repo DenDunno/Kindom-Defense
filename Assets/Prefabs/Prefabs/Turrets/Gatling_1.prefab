@@ -273,6 +273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponRadar: {fileID: 5494941660833661881}
   _upgradedWeapon: {fileID: 3719150776240654808, guid: 336b90c7f76cf4041a1c32bb8164a6d2, type: 3}
+  _price: 10
+  _sellPrice: 5
 --- !u!1 &6970575671966200087
 GameObject:
   m_ObjectHideFlags: 0

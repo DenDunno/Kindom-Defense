@@ -1,16 +1,20 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 [Serializable]
 public class PlayerGold
 {
-    [SerializeField] private TMP_Text _goldUI;
+    [SerializeField] private PlayerGoldUI _goldUI;
+    [SerializeField] private int _gold;
     private readonly List<Enemy> _activeEnemies = new List<Enemy>();
     private readonly Dictionary<Health, int> _rewardForEnemy = new Dictionary<Health, int>();
-    private int _gold;
 
+    public void Init()
+    {
+        SetGold(_gold);
+    }
+    
     public bool TryBuy(int price)
     {
         bool purchaseSuccessful = price <= _gold;
@@ -21,6 +25,11 @@ public class PlayerGold
         }
 
         return purchaseSuccessful;
+    }
+
+    public void SoldWeapon(int weaponSellPrice)
+    {
+        SetGold(_gold + weaponSellPrice);
     }
 
     public void TryAddEnemyToTrack(Enemy enemy)
@@ -41,6 +50,6 @@ public class PlayerGold
     private void SetGold(int gold)
     {
         _gold = gold;
-        _goldUI.text = gold.ToString();
+        _goldUI.SetGold(gold);
     }
 }

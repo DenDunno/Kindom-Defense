@@ -16,6 +16,7 @@ public class EntryPoint : MonoBehaviour
         _updatables = new IUpdatable[] {enemiesFactory};
 
         enemiesFactory.LoadEnemies();
+        _playerGold.Init();
         _waveSpawners.ForEach(waveSpawner => waveSpawner.Init(enemiesFactory, _playerGold));
         _towers.ForEach(tower => tower.Init(_playerGold));
     }

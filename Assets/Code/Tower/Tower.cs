@@ -6,10 +6,10 @@ public class Tower : MonoBehaviour
     [SerializeField] private Transform _buildPosition;
     [SerializeField] private TowerUpgrade _towerUpgrade;
     [SerializeField] private TowerSelection _towerSelection;
-    private WeaponPresenter _weaponPresenter;
     private PlayerGold _playerGold;
     
     public bool IsSelected => _towerSelection.IsSelected;
+    public WeaponPresenter WeaponPresenter { get; private set; }
 
     public void Init(PlayerGold playerGold)
     {
@@ -18,27 +18,30 @@ public class Tower : MonoBehaviour
     
     public void BuildWeapon(WeaponPresenter weaponPrefab)
     {
-        _weaponPresenter = Instantiate(weaponPrefab, _buildPosition.position, Quaternion.identity, transform);
-        _detectionRadius.localScale = Vector3.one * (_weaponPresenter.Radar.DetectionRadius * 2);
+        WeaponPresenter = Instantiate(weaponPrefab, _buildPosition.position, Quaternion.identity, transform);
+        _detectionRadius.localScale = Vector3.one * (WeaponPresenter.Radar.DetectionRadius * 2);
+        _playerGold.TryBuy(weaponPrefab.Price);
     }
 
     public void Upgrade()
     {
         _towerUpgrade.Upgrade();
-        WeaponPresenter upgradedWeapon = _weaponPresenter.UpgradedWeapon;
+        WeaponPresenter upgradedWeapon = WeaponPresenter.UpgradedWeapon;
+        _playerGold.TryBuy(upgradedWeapon.Price);
         DestroyWeapon();
         BuildWeapon(upgradedWeapon);
     }
 
     public void Sold()
     {
+        _playerGold.SoldWeapon(WeaponPresenter.SellPrice);
         DestroyWeapon();
         _towerUpgrade.ReturnStartView();
     }
 
     private void DestroyWeapon()
     {
-        Destroy(_weaponPresenter.gameObject);
+        Destroy(WeaponPresenter.gameObject);
     }
 
     public void Select()

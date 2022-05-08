@@ -7,7 +7,6 @@ using UnityEngine;
 public class TowerSelection 
 {
     [SerializeField] private TowerMenu _menu;
-    [SerializeField] private Transform _detectionRadius;
     [SerializeField] private Outlinable _outlinable;
     private bool _isAnimation;
 
