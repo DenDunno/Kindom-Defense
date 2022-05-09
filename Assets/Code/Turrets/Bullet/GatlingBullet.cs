@@ -5,12 +5,10 @@ using UnityEngine;
 public class GatlingBullet : Bullet
 {
     [SerializeField] private TrailRenderer _trail;
-    private Transform _target;
     private const float _timeBeforeEmitting = 0.005f;
 
-    public override async void Init(Transform target)
+    public override async void Init()
     {
-        _target = target;
         Update();
 
         await UniTask.Delay(TimeSpan.FromSeconds(_timeBeforeEmitting));
@@ -19,15 +17,15 @@ public class GatlingBullet : Bullet
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _target.position, Speed * Time.deltaTime);
-        transform.LookAt(_target);
+        transform.position = Vector3.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
+        transform.LookAt(Target);
     }
     
     private void OnTriggerEnter(Collider enemy)
     {
         var enemyHealth = enemy.GetComponent<Health>();
         
-        if (enemyHealth.IsDead == false || _target.transform == enemyHealth.transform)
+        if (enemyHealth.IsDead == false || Target.transform == enemyHealth.transform)
         {
             enemyHealth.TakeDamage(Damage);
 

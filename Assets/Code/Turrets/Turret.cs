@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Turret : Weapon
+public class Turret : Weapon
 {
     [SerializeField] private WeaponRotation _weaponRotation;
     [SerializeField] private Transform _bulletSpawnPosition;
@@ -32,7 +32,8 @@ public abstract class Turret : Weapon
         Bullet bullet = _bulletFactory.Create();
         bullet.transform.parent = transform;
         bullet.transform.position = _bulletSpawnPosition.position;
-        bullet.Init(enemy);   
+        bullet.SetTarget(enemy);
+        bullet.Init();
     }
 
     protected virtual bool ConditionForShooting => true;

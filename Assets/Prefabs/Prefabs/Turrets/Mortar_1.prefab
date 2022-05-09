@@ -205,8 +205,8 @@ GameObject:
   - component: {fileID: 5910222147314924796}
   - component: {fileID: 6435225048757986884}
   - component: {fileID: 3598615142931249213}
-  - component: {fileID: 1766905383}
   - component: {fileID: 1766905382}
+  - component: {fileID: 1441023076}
   m_Layer: 0
   m_Name: Mortar_1
   m_TagString: Untagged
@@ -258,23 +258,6 @@ MonoBehaviour:
   _upgradedWeapon: {fileID: 8537615222552457891, guid: ad3caff5d4993d447ba344e17158d398, type: 3}
   _price: 20
   _sellPrice: 10
---- !u!114 &1766905383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6435225048757986886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cba8ed2014e54dc3afcfd114108d3744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponRadar: {fileID: 6435225048757986884}
-  _weaponRotation: {fileID: 1766905382}
-  _bulletSpawnPosition: {fileID: 1747587477}
-  _bulletPrefab: {fileID: 3087255928572589222, guid: c0929e9e0d0cdc142a0c5721e0377461, type: 3}
-  _rate: 1
 --- !u!114 &1766905382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,3 +273,20 @@ MonoBehaviour:
   _weaponRadar: {fileID: 6435225048757986884}
   _head: {fileID: 3182414076144011495}
   _pillar: {fileID: 5974485055872358674}
+--- !u!114 &1441023076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435225048757986886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4543a6073b6343b0ad66c69b75bf24ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponRadar: {fileID: 6435225048757986884}
+  _weaponRotation: {fileID: 1766905382}
+  _bulletSpawnPosition: {fileID: 1747587477}
+  _bulletPrefab: {fileID: 3087255928572589222, guid: c0929e9e0d0cdc142a0c5721e0377461, type: 3}
+  _rate: 1

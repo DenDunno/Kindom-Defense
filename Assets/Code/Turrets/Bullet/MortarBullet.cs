@@ -10,9 +10,9 @@ public class MortarBullet : Bullet
     private float _time;
     private const float _g = 9.81f;
 
-    public override void Init(Transform target)
+    public override void Init()
     {
-        _targetPosition = target.position;
+        _targetPosition = Target.position;
         _startPosition = transform.position;
         _heightOffset = EvaluateHeightOffset();
         _startVelocity = EvaluateStartVelocity();
@@ -47,16 +47,15 @@ public class MortarBullet : Bullet
     private void Update()
     {
         _time += Time.deltaTime;
-        
-        Vector3 newPosition = Vector3.LerpUnclamped(_startPosition, _targetPosition, _time / _flyTime);
-        newPosition.y = EvaluateHeight();
-
-        transform.position = newPosition;
+        transform.position = EvaluatePosition();
     }
 
-    private float EvaluateHeight()
+    private Vector3 EvaluatePosition()
     {
-        return _startPosition.y + _startVelocity * _time - _g * _time * _time / 2;
+        Vector3 newPosition = Vector3.LerpUnclamped(_startPosition, _targetPosition, _time / _flyTime);
+        newPosition.y = _startPosition.y + _startVelocity * _time - _g * _time * _time / 2;
+
+        return newPosition;
     }
 
     private void OnTriggerEnter(Collider other)
