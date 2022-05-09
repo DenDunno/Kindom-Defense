@@ -1,9 +1,4 @@
-﻿using UnityEngine;
-
-public class Mortar : Weapon
+﻿
+public class Mortar : Turret
 {
-    protected override void UpdateWeapon(Transform targetEnemy)
-    {
-        throw new System.NotImplementedException();
-    }
 }
