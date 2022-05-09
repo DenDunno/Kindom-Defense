@@ -10,12 +10,14 @@ public class PlayerGold
     private readonly List<Enemy> _activeEnemies = new List<Enemy>();
     private readonly Dictionary<Health, int> _rewardForEnemy = new Dictionary<Health, int>();
 
+    public int Value => _gold;
+    
     public void Init()
     {
         SetGold(_gold);
     }
     
-    public bool TryBuy(int price)
+    public bool Buy(int price)
     {
         bool purchaseSuccessful = price <= _gold;
 

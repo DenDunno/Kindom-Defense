@@ -151,7 +151,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659132}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 7113145264663747800}
+        m_TargetAssemblyTypeName: TowerSelection, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 570963440}
   - component: {fileID: 570963439}
   - component: {fileID: 570963438}
+  - component: {fileID: 5942378848804397866}
   m_Layer: 0
   m_Name: DetectionRadius
   m_TagString: Untagged
@@ -470,6 +471,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &5942378848804397866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570963437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe2e433f61d48b982eb20c825cc0ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tower: {fileID: 154659132}
 --- !u!1 &738598470
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,8 +574,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659132}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 7113145264663747800}
+        m_TargetAssemblyTypeName: TowerSelection, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -615,8 +629,8 @@ GameObject:
   - component: {fileID: 916983941}
   - component: {fileID: 916983940}
   - component: {fileID: 916983945}
-  - component: {fileID: 916983944}
   - component: {fileID: 1437875140783205152}
+  - component: {fileID: 2266123386694858057}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -718,28 +732,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 0}
---- !u!114 &916983944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916983939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47923e9112a643ccacc184a7b90f26c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _towerMenuAnimation:
-    _menu: {fileID: 916983943}
-    _billboard: {fileID: 916983945}
-    _graphicRaycaster: {fileID: 916983940}
-  _towerMenuUI:
-    _tower: {fileID: 4595187489619055491}
-    _upgradeState: {fileID: 6426034741689545999}
-    _selectionState: {fileID: 4128327538816139651}
-    _upgradeButton: {fileID: 2196847720343437537}
-    _detectionRadius: {fileID: 570963441}
 --- !u!114 &1437875140783205152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,8 +745,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiStates:
-  - {fileID: 4128327538816139651}
-  - {fileID: 6426034741689545999}
+  - {fileID: 5362646322024833088}
+  - {fileID: 1491044653391242341}
+--- !u!114 &2266123386694858057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916983939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e808cba98bb4ff79b4dbec51204164f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tower: {fileID: 154659132}
+  _selectionButtons:
+  - _weaponPresenter: {fileID: 5645206823764981441, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
+    _priceUI: {fileID: 8768131783003221539}
+    _button: {fileID: 2056933573}
+  - _weaponPresenter: {fileID: 3598615142931249213, guid: 3c698e83bdac81c4fbec49893b71d541, type: 3}
+    _priceUI: {fileID: 6121910528573045266}
+    _button: {fileID: 320184398}
+  _upgradeButton:
+    _weaponPresenter: {fileID: 0}
+    _priceUI: {fileID: 3809441328382764039}
+    _button: {fileID: 2196847720343437537}
+  _sellButton:
+    _weaponPresenter: {fileID: 0}
+    _priceUI: {fileID: 2845178838029260168}
+    _button: {fileID: 3559897623799293091}
 --- !u!1 &1369601806
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,8 +1017,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659132}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 7113145264663747800}
+        m_TargetAssemblyTypeName: TowerSelection, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -1112,7 +1132,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1131,8 +1151,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659132}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 7113145264663747800}
+        m_TargetAssemblyTypeName: TowerSelection, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -1276,8 +1296,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659132}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 7113145264663747800}
+        m_TargetAssemblyTypeName: TowerSelection, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -1402,7 +1422,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1421,8 +1441,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 154659132}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 7113145264663747800}
+        m_TargetAssemblyTypeName: TowerSelection, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 1
         m_Arguments:
@@ -1693,7 +1713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3062750226236109704}
-  - component: {fileID: 4128327538816139651}
+  - component: {fileID: 5362646322024833088}
   m_Layer: 0
   m_Name: Selection
   m_TagString: Untagged
@@ -1723,7 +1743,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4128327538816139651
+--- !u!114 &5362646322024833088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1732,15 +1752,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2052484953765270447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a98ebe68e015e0342b0e7ddd88bcee48, type: 3}
+  m_Script: {fileID: 11500000, guid: fc9414d262a848c4595da9e5f1fcb1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _uiSwitcher: {fileID: 1437875140783205152}
-  _prices:
-  - _weaponPresenter: {fileID: 5645206823764981441, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
-    _priceUI: {fileID: 8768131783003221539}
-  - _weaponPresenter: {fileID: 3598615142931249213, guid: 3c698e83bdac81c4fbec49893b71d541, type: 3}
-    _priceUI: {fileID: 6121910528573045266}
 --- !u!1 &2103696753176935114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,7 +1936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2036237544614697555}
-  - component: {fileID: 6426034741689545999}
+  - component: {fileID: 1491044653391242341}
   m_Layer: 0
   m_Name: Upgrade
   m_TagString: Untagged
@@ -1950,7 +1965,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6426034741689545999
+--- !u!114 &1491044653391242341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1959,13 +1974,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3812340564911975233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2b15a1033f64beb83409a5ade021d12, type: 3}
+  m_Script: {fileID: 11500000, guid: fc9414d262a848c4595da9e5f1fcb1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _uiSwitcher: {fileID: 1437875140783205152}
-  _tower: {fileID: 154659132}
-  _upgradeTextUI: {fileID: 3809441328382764039}
-  _sellTextUI: {fileID: 2845178838029260168}
 --- !u!1 &4563766918841336033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,6 +2021,7 @@ GameObject:
   - component: {fileID: 4595187489621479779}
   - component: {fileID: 7033827121691819930}
   - component: {fileID: 154659132}
+  - component: {fileID: 7113145264663747800}
   - component: {fileID: 1669525836}
   - component: {fileID: 1669525837}
   m_Layer: 0
@@ -2109,15 +2122,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66411f7e10cb41968f2180e0cb52d4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectionRadius: {fileID: 570963441}
-  _buildPosition: {fileID: 8681399733684560427}
-  _towerUpgrade:
+  _towerViewUpgrade:
     _meshRenderer: {fileID: 4595187489621479779}
     _meshFilter: {fileID: 4595187489620382627}
     _towerModels: {fileID: 11400000, guid: fe638e0a94a61ed41868be97faf6f25a, type: 2}
-  _towerSelection:
-    _menu: {fileID: 916983944}
-    _outlinable: {fileID: 1669525837}
+  _buildPosition: {fileID: 8681399733684560427}
+--- !u!114 &7113145264663747800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595187489619546019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f52429ed4b440d985c2b6b40b1689f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuAnimation:
+    _menu: {fileID: 916983943}
+    _billboard: {fileID: 916983945}
+    _graphicRaycaster: {fileID: 916983940}
+  _outlinable: {fileID: 1669525837}
+  _menuUI:
+    _tower: {fileID: 154659132}
+    _upgradeState: {fileID: 1491044653391242341}
+    _selectionState: {fileID: 5362646322024833088}
+    _detectionRadius: {fileID: 5942378848804397866}
 --- !u!114 &1669525836
 MonoBehaviour:
   m_ObjectHideFlags: 0

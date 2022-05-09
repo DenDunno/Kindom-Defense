@@ -8,6 +8,7 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private List<AssetReference> _enemiesUsedInLevel;
     [SerializeField] private PlayerGold _playerGold;
     [SerializeField] private Tower[] _towers;
+    [SerializeField] private TradeButtons[] _tradeButtons;
     private IUpdatable[] _updatables;
     
     private void Start()
@@ -19,6 +20,7 @@ public class EntryPoint : MonoBehaviour
         _playerGold.Init();
         _waveSpawners.ForEach(waveSpawner => waveSpawner.Init(enemiesFactory, _playerGold));
         _towers.ForEach(tower => tower.Init(_playerGold));
+        _tradeButtons.ForEach(tradeButtons => tradeButtons.Init(_playerGold));
     }
 
     private void Update()

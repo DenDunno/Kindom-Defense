@@ -1,14 +1,13 @@
-﻿using System;
-using Cysharp.Threading.Tasks;
+﻿using DG.Tweening;
 using EPOOutline;
 using UnityEngine;
 
-[Serializable]
-public class TowerSelection 
+public class TowerSelection : MonoBehaviour
 {
-    [SerializeField] private TowerMenu _menu;
+    [SerializeField] private TowerMenuAnimation _menuAnimation;
     [SerializeField] private Outlinable _outlinable;
-    private bool _isAnimation;
+    [SerializeField] private TowerMenuUI _menuUI;
+    private Tween _animation;
 
     public bool IsSelected { get; private set; }
 
@@ -22,24 +21,15 @@ public class TowerSelection
         ToggleSelection(false);
     }
     
-    private async void ToggleSelection(bool show)
+    private void ToggleSelection(bool show)
     {
-        if (IsSelected == !show && _isAnimation == false)
+        if (IsSelected == !show && _animation.IsActive() == false)
         {
-            Func<UniTask> tween = show ? (Func<UniTask>)_menu.Show : _menu.Hide;
+            _animation = show ? _menuAnimation.Show() : _menuAnimation.Hide();
             IsSelected = !IsSelected;
-
-            _menu.SetUI(IsSelected);
-            _outlinable.enabled = IsSelected;
             
-            await PlayAnimation(tween);
+            _menuUI.SetUI(IsSelected);
+            _outlinable.enabled = IsSelected;
         }
-    }
-
-    private async UniTask PlayAnimation(Func<UniTask> tween)
-    {
-        _isAnimation = true;
-        await tween();
-        _isAnimation = false;
     }
 }

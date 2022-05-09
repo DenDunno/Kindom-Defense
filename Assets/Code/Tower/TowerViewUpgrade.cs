@@ -2,13 +2,13 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class TowerUpgrade 
+public class TowerViewUpgrade 
 {
     [SerializeField] private MeshRenderer _meshRenderer;
     [SerializeField] private MeshFilter _meshFilter;
     [SerializeField] private TowerModels _towerModels;
     private int _upgradeIndex;
-    
+
     public void Upgrade()
     {
         SetTowerView(_upgradeIndex + 1);
