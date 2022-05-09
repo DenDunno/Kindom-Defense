@@ -2,66 +2,30 @@
 
 public class MortarBullet : Bullet
 {
-    private Vector3 _targetPosition;
-    private Vector3 _startPosition;
-    private float _heightOffset;
-    private float _startVelocity;
-    private float _flyTime;
-    private float _time;
-    private const float _g = 9.81f;
-
+    [SerializeField] private float _explosionRadius = 2f;
+    private MortarBulletMovement _movement;
+    private EnemyRadar _enemyRadar;
+    
     public override void Init()
     {
-        _targetPosition = Target.position;
-        _startPosition = transform.position;
-        _heightOffset = EvaluateHeightOffset();
-        _startVelocity = EvaluateStartVelocity();
-        _flyTime = EvaluateFlyTime();
-        _time = 0;
-    }
-
-    private float EvaluateHeightOffset()
-    {
-        var startPosition = new Vector2(_startPosition.x, _startPosition.z);
-        var targetPosition = new Vector2(_targetPosition.x, _targetPosition.z);
-        float distance = Vector2.Distance(startPosition, targetPosition);
-
-        return 0.16f * distance + 0.83f;
-    }
-
-    private float EvaluateStartVelocity()
-    {
-        float tMax = Mathf.Sqrt(_heightOffset * 2 / _g);
-        return (_heightOffset + _g * tMax * tMax / 2) / tMax;
-    }
-
-    private float EvaluateFlyTime()
-    {
-        float a = -_g / 2;
-        float b = _startVelocity;
-        float c = _startPosition.y - _targetPosition.y;
-        float discriminant = b * b - 4 * a * c;
-        return (-b - Mathf.Sqrt(discriminant)) / (2 * a);
+        _movement = new MortarBulletMovement(Target.position, transform.position, Speed);
+        _enemyRadar = new EnemyRadar(10, transform, _explosionRadius);
     }
 
     private void Update()
     {
-        _time += Time.deltaTime;
-        transform.position = EvaluatePosition();
+        transform.position = _movement.EvaluatePosition();
     }
-
-    private Vector3 EvaluatePosition()
-    {
-        Vector3 newPosition = Vector3.LerpUnclamped(_startPosition, _targetPosition, _time / _flyTime);
-        newPosition.y = _startPosition.y + _startVelocity * _time - _g * _time * _time / 2;
-
-        return newPosition;
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other is TerrainCollider)
         {
+            foreach (Health enemy in _enemyRadar.FindEnemies())
+            {
+                enemy.TakeDamage(Damage);
+            }
+            
             ToggleBullet(false);
         }
     }

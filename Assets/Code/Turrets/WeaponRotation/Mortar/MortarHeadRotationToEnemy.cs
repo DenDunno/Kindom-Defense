@@ -17,7 +17,7 @@ public class MortarHeadRotationToEnemy : IWeaponHeadRotationToEnemy
         get
         {
             Vector3 startPosition = _head.transform.position;
-            Vector3 targetPosition = _weaponRadar.Target.transform.position;
+            Vector3 targetPosition = _weaponRadar.Target.position;
             startPosition.y = 0;
             targetPosition.y = 0;
             float distance = Vector3.Distance(startPosition, targetPosition);

@@ -16,7 +16,7 @@ public class TurretHeadRotationToEnemy : IWeaponHeadRotationToEnemy
     {
         get
         {
-            float xRotation = Quaternion.LookRotation(_weaponRadar.Target.transform.position - _head.position).eulerAngles.x;
+            float xRotation = Quaternion.LookRotation(_weaponRadar.Target.position - _head.position).eulerAngles.x;
             
             if (xRotation < 90 && xRotation > _maxAngle)
                 xRotation = _maxAngle;
