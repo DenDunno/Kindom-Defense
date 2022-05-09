@@ -7620,6 +7620,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1224592626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2266123386694858057, guid: ab213c656ebe3d546b52724e919cc65a, type: 3}
+  m_PrefabInstance: {fileID: 391007087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e808cba98bb4ff79b4dbec51204164f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1301743838
 GameObject:
   m_ObjectHideFlags: 0
@@ -8229,6 +8240,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab213c656ebe3d546b52724e919cc65a, type: 3}
+--- !u!114 &1888244579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2266123386694858057, guid: ab213c656ebe3d546b52724e919cc65a, type: 3}
+  m_PrefabInstance: {fileID: 1669525833}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e808cba98bb4ff79b4dbec51204164f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!850595691 &1908915936
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -8374,7 +8396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1680321382444620489, guid: eabcede01be090345941de73ccb58d24, type: 3}
       propertyPath: _playerGold._gold
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1680321382444620489, guid: eabcede01be090345941de73ccb58d24, type: 3}
       propertyPath: _towers.Array.size
@@ -8393,6 +8415,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 797849349}
     - target: {fileID: 1680321382444620489, guid: eabcede01be090345941de73ccb58d24, type: 3}
+      propertyPath: _tradeButtons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680321382444620489, guid: eabcede01be090345941de73ccb58d24, type: 3}
       propertyPath: _waveSpawners.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -8400,6 +8426,14 @@ PrefabInstance:
       propertyPath: _playerGold._goldUI._goldUI
       value: 
       objectReference: {fileID: 1371219823}
+    - target: {fileID: 1680321382444620489, guid: eabcede01be090345941de73ccb58d24, type: 3}
+      propertyPath: _tradeButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1888244579}
+    - target: {fileID: 1680321382444620489, guid: eabcede01be090345941de73ccb58d24, type: 3}
+      propertyPath: _tradeButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1224592626}
     - target: {fileID: 1680321382444620489, guid: eabcede01be090345941de73ccb58d24, type: 3}
       propertyPath: _waveSpawners.Array.data[0]
       value: 

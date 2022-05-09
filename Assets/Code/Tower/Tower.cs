@@ -2,14 +2,11 @@
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private Transform _detectionRadius;
+    [SerializeField] private TowerViewUpgrade _towerViewUpgrade;
     [SerializeField] private Transform _buildPosition;
-    [SerializeField] private TowerUpgrade _towerUpgrade;
-    [SerializeField] private TowerSelection _towerSelection;
     private PlayerGold _playerGold;
-    
-    public bool IsSelected => _towerSelection.IsSelected;
-    public WeaponPresenter WeaponPresenter { get; private set; }
+
+    public WeaponPresenter Weapon { get; private set; }
 
     public void Init(PlayerGold playerGold)
     {
@@ -18,39 +15,28 @@ public class Tower : MonoBehaviour
     
     public void BuildWeapon(WeaponPresenter weaponPrefab)
     {
-        WeaponPresenter = Instantiate(weaponPrefab, _buildPosition.position, Quaternion.identity, transform);
-        _detectionRadius.localScale = Vector3.one * (WeaponPresenter.Radar.DetectionRadius * 2);
-        _playerGold.TryBuy(weaponPrefab.Price);
+        Weapon = Instantiate(weaponPrefab, _buildPosition.position, Quaternion.identity, transform);
+        _playerGold.Buy(weaponPrefab.Price);
     }
 
     public void Upgrade()
     {
-        _towerUpgrade.Upgrade();
-        WeaponPresenter upgradedWeapon = WeaponPresenter.UpgradedWeapon;
-        _playerGold.TryBuy(upgradedWeapon.Price);
+        _towerViewUpgrade.Upgrade();
+        WeaponPresenter upgradedWeapon = Weapon.UpgradedWeapon;
+        _playerGold.Buy(upgradedWeapon.Price);
         DestroyWeapon();
         BuildWeapon(upgradedWeapon);
     }
 
     public void Sold()
     {
-        _playerGold.SoldWeapon(WeaponPresenter.SellPrice);
+        _playerGold.SoldWeapon(Weapon.SellPrice);
         DestroyWeapon();
-        _towerUpgrade.ReturnStartView();
+        _towerViewUpgrade.ReturnStartView();
     }
 
     private void DestroyWeapon()
     {
-        Destroy(WeaponPresenter.gameObject);
-    }
-
-    public void Select()
-    {
-        _towerSelection.Select();
-    }
-    
-    public void Unselect()
-    {
-        _towerSelection.Unselect();
+        Destroy(Weapon.gameObject);
     }
 }
