@@ -1,5 +1,5 @@
 ﻿
 public interface IWeaponHeadRotationToEnemy
 {
-    void RotateHeadToEnemy();
+    float Angle { get; }
 }

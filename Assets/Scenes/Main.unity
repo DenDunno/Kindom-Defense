@@ -8396,7 +8396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1680321382444620489, guid: eabcede01be090345941de73ccb58d24, type: 3}
       propertyPath: _playerGold._gold
-      value: 30
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1680321382444620489, guid: eabcede01be090345941de73ccb58d24, type: 3}
       propertyPath: _towers.Array.size

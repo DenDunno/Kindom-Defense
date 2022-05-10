@@ -227,10 +227,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponRadar: {fileID: 5821382636513451750}
   _weaponRotation: {fileID: 5821382636513451752}
-  _gatlingBarrel: {fileID: 3215306797803715266}
   _bulletSpawnPosition: {fileID: 6631793973818061885}
-  _bulletPrefab: {fileID: 5421509208944171897, guid: 243986113cc132f43a255b50be869646, type: 3}
+  _bulletPrefab: {fileID: 5958298853143955208, guid: 243986113cc132f43a255b50be869646, type: 3}
   _rate: 0.3
+  _gatlingBarrel: {fileID: 3215306797803715266}
 --- !u!114 &5821382636513451752
 MonoBehaviour:
   m_ObjectHideFlags: 0

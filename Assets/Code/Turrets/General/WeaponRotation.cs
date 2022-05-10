@@ -12,7 +12,8 @@ public abstract class WeaponRotation : MonoBehaviour
 
     private void Start()
     {
-        _rotationToEnemy = new WeaponRotationToEnemy(_weaponRadar, _pillar, GetHeadRotationToEnemy(_weaponRadar, _head));
+        IWeaponHeadRotationToEnemy headRotationToEnemy = GetHeadRotationToEnemy(_weaponRadar, _head);
+        _rotationToEnemy = new WeaponRotationToEnemy(_weaponRadar, _pillar, _head, headRotationToEnemy);
         _idleAnimation = new WeaponIdleAnimation(_pillar, _head, IdleAngle);
     }
 
