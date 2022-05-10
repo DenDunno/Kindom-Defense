@@ -6,5 +6,6 @@ public class WaveList : ScriptableObject
 {
     [SerializeField] private List<Wave> _waves;
 
-    public Queue<Wave> Waves => new Queue<Wave>(_waves);
+    public int Count => _waves.Count;
+    public Wave this[int index] => _waves[index];
 }

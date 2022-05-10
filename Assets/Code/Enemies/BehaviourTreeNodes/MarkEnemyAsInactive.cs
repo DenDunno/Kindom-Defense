@@ -10,6 +10,5 @@ public class MarkEnemyAsInactive : Action
     public override void OnStart()
     {
         _enemy.MarkAsInactive();
-        gameObject.SetActive(false);
     }
 }

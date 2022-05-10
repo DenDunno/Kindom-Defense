@@ -4,10 +4,10 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float _health = 100;
-    [SerializeField] private HealthBar _healthBar;
     private float _maxHealth;
 
     public event Action<Health> Died;
+    public event Action<float, float> DamageTaken;
     public bool IsDead => _health <= 0;
 
     private void Start()
@@ -20,7 +20,8 @@ public class Health : MonoBehaviour
         if (_health <= 0)
             return;
         
-        SetHealth(_health - damage);
+        _health -= damage;
+        DamageTaken?.Invoke(_health, _maxHealth);
         
         if (_health <= 0)
             Died?.Invoke(this);
@@ -28,13 +29,6 @@ public class Health : MonoBehaviour
 
     public void ResetHealth()
     {
-        SetHealth(_maxHealth);
-        _healthBar.gameObject.SetActive(false);
-    }
-
-    private void SetHealth(float health)
-    {
-        _health = health;
-        _healthBar.UpdateValue(_health / _maxHealth);
+        _health = _maxHealth;
     }
 }

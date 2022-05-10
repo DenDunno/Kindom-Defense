@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 [Serializable]
-public class PlayerGoldUI
+public class PlayerStatsUI
 {
     [SerializeField] private TMP_Text _goldUI;
     private const float _animationDuration = 0.25f;
@@ -12,7 +12,7 @@ public class PlayerGoldUI
     private const float _startScale = 1f;
     private Sequence _animation;
     
-    public void SetGold(int gold)
+    public void SetValue(int gold)
     {
         int current = int.Parse(_goldUI.text);
         

@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IPoolableObject
 {
-    [SerializeField] public EnemyStartup _startup;
-    [SerializeField] public EnemyRestart _restart;
+    [SerializeField] private EnemyStartup _startup;
+    [SerializeField] private EnemyRestart _restart;
     [SerializeField] private Health _health;
-    [SerializeField] private int _reward = 3;
+    [SerializeField] private EnemyStats _enemyStats;
     
     public bool IsActive { get; private set; } = true;
     public EnemyStartup Startup => _startup;
     public Health Health => _health;
-    public int Reward => _reward;
+    public EnemyStats Stats => _enemyStats;
 
     private void Start()
     {
@@ -26,5 +26,6 @@ public class Enemy : MonoBehaviour, IPoolableObject
     public void MarkAsInactive()
     {
         IsActive = false;
+        gameObject.SetActive(false);
     }
 }

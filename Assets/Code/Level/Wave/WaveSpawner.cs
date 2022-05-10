@@ -18,26 +18,26 @@ public class WaveSpawner : MonoBehaviour
     
     private IEnumerator Start()
     {
-        for (int i = 0; i < _waveList.Waves.Count; i++)
+        for (int i = 0; i < _waveList.Count; i++)
         {
-            yield return StartCoroutine(Spawn());
+            yield return StartCoroutine(SpawnWave(i));
         }
     }
 
-    private IEnumerator Spawn()
+    private IEnumerator SpawnWave(int waveIndex)
     {
-        if (_waveList.Waves.IsNotEmpty())
+        Wave wave = _waveList[waveIndex];
+
+        foreach (EnemiesGroup enemiesGroup in wave.EnemiesGroups)
         {
-            Wave wave = _waveList.Waves.Dequeue();
-
-            yield return new WaitForSeconds(wave.Delay);
-
-            foreach (AssetReference enemyReference in wave.Enemies)
+            yield return new WaitForSeconds(enemiesGroup.Delay);
+            
+            foreach (AssetReference enemyReference in enemiesGroup.Enemies)
             {
                 Enemy enemy = SpawnEnemy(enemyReference);
                 _playerGold.TryAddEnemyToTrack(enemy);
                 
-                yield return new WaitForSeconds(wave.SpawnRate);
+                yield return new WaitForSeconds(enemiesGroup.SpawnRate);
             }
         }
     }

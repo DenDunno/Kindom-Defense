@@ -5,34 +5,51 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    [SerializeField] private Billboard _healthBar;
     [SerializeField] private Slider _slider;
     [SerializeField] private MPImage _healthBarView;
     [SerializeField] private Gradient _gradient;
     [SerializeField] private Billboard _billboard;
+    [SerializeField] private Health _enemyHealth;
     private const float _animationDuration = 0.25f;
-    private Tween _animation; 
+    private Tween _animation;
 
-    public void UpdateValue(float sliderValue)
+    private void OnEnable()
     {
-        if (gameObject.activeInHierarchy == false)
+        _enemyHealth.DamageTaken += UpdateValue;
+    }
+    
+    private void OnDisable()
+    {
+        _enemyHealth.DamageTaken -= UpdateValue;
+    }
+
+    private void UpdateValue(float current, float max)
+    {
+        if (_healthBar.gameObject.activeInHierarchy == false)
         {
-            gameObject.SetActive(true);
+            _healthBar.gameObject.SetActive(true);
             _billboard.RotateToCameraNow();
         }
 
-        if (sliderValue <= 0)
+        if (current <= 0)
         {
-            gameObject.SetActive(false);
+            _healthBar.gameObject.SetActive(false);
             return;
         }
         
         _animation?.Kill();
-        _animation = DOTween.To(() => _slider.value, SetValue, sliderValue, _animationDuration);
+        _animation = DOTween.To(() => _slider.value, SetValue, current / max, _animationDuration);
     }
 
     private void SetValue(float sliderValue)
     {
         _slider.value = sliderValue;
         _healthBarView.color = _gradient.Evaluate(sliderValue);
+    }
+    
+    public void ResetHealthBar()
+    {
+        SetValue(1);
     }
 }

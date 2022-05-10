@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class PlayerGold
 {
-    [SerializeField] private PlayerGoldUI _goldUI;
+    [SerializeField] private PlayerStatsUI _goldUI;
     [SerializeField] private int _gold;
     private readonly List<Enemy> _activeEnemies = new List<Enemy>();
     private readonly Dictionary<Health, int> _rewardForEnemy = new Dictionary<Health, int>();
@@ -40,7 +40,7 @@ public class PlayerGold
         {
             enemy.Health.Died += OnEnemyDied;
             _activeEnemies.Add(enemy);
-            _rewardForEnemy[enemy.Health] = enemy.Reward;
+            _rewardForEnemy[enemy.Health] = enemy.Stats.Reward;
         }
     }
 
@@ -52,6 +52,6 @@ public class PlayerGold
     private void SetGold(int gold)
     {
         _gold = gold;
-        _goldUI.SetGold(gold);
+        _goldUI.SetValue(gold);
     }
 }
