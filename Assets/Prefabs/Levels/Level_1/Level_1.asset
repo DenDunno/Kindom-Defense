@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waves:
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -47,7 +47,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -80,7 +80,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -113,7 +113,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -146,7 +146,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -179,7 +179,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -212,7 +212,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -245,7 +245,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -278,7 +278,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 
@@ -311,7 +311,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
   - _delay: 2
-    _spawnRate: 1
+    _spawnRate: 2
     _enemies:
     - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
       m_SubObjectName: 

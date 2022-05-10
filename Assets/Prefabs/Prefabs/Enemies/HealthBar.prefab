@@ -536,6 +536,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
+  _billboard: {fileID: 8586982006806966843}
 --- !u!114 &8586982006806966843
 MonoBehaviour:
   m_ObjectHideFlags: 0

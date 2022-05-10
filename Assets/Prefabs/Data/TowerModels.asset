@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TowerModels
   m_EditorClassIdentifier: 
   _towerModels:
-  - _mesh: {fileID: 4300000, guid: 09af8d10f2d156644aec4e9b06dca89c, type: 3}
-    _material: {fileID: 2100000, guid: ab64879acba7f09449bb09dd11edd086, type: 2}
-  - _mesh: {fileID: 4300000, guid: 160ecbb9e27a9c34684bc7710b6230da, type: 3}
-    _material: {fileID: 2100000, guid: ab64879acba7f09449bb09dd11edd086, type: 2}
-  - _mesh: {fileID: 4300000, guid: d9f4d66b6458e5c4faba89784cf5098b, type: 3}
-    _material: {fileID: 2100000, guid: ab64879acba7f09449bb09dd11edd086, type: 2}
+  - _mesh: {fileID: 4300000, guid: 95a0de05df4f22c4ebd6ec4284a7bc69, type: 3}
+    _material: {fileID: 2100000, guid: e9ddd137257f1d24b8c10e5cb6401438, type: 2}
+  - _mesh: {fileID: 4300000, guid: 9354e622a8760af4b95227a7c4e0b042, type: 3}
+    _material: {fileID: 2100000, guid: e9ddd137257f1d24b8c10e5cb6401438, type: 2}
+  - _mesh: {fileID: 4300000, guid: 92063618bb8c4fb48b13a749a5da6e26, type: 3}
+    _material: {fileID: 2100000, guid: e9ddd137257f1d24b8c10e5cb6401438, type: 2}

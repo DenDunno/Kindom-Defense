@@ -2025,7 +2025,7 @@ GameObject:
   - component: {fileID: 1669525836}
   - component: {fileID: 1669525837}
   m_Layer: 0
-  m_Name: SquareTower
+  m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2055,7 +2055,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4595187489619546019}
-  m_Mesh: {fileID: 4300000, guid: 09af8d10f2d156644aec4e9b06dca89c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 95a0de05df4f22c4ebd6ec4284a7bc69, type: 3}
 --- !u!23 &4595187489621479779
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2075,7 +2075,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ab64879acba7f09449bb09dd11edd086, type: 2}
+  - {fileID: 2100000, guid: e9ddd137257f1d24b8c10e5cb6401438, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -16,7 +16,7 @@ public class TowerMenuAnimation
     
     public Tween Show()
     {
-        _billboard.Update();
+        _billboard.RotateToCameraNow();
         _menu.gameObject.SetActive(true);
         Tween tween = _menu.DOScale(_targetScale, _showDuration).SetEase(Ease.OutBack);
         tween.onComplete += () => _graphicRaycaster.enabled = true;

@@ -9,22 +9,20 @@ public class Billboard : MonoBehaviour
     {
         _mainCamera = mainCamera;
     }
-    
-    public void Update()
+
+    public void RotateToCameraNow()
     {
-        MoveInFrontOfCamera();
-        RotateToCamera();
+        transform.rotation = GetRotation();
     }
 
-    private void MoveInFrontOfCamera()
+    private void Update()
     {
+        transform.rotation = Quaternion.Lerp(transform.rotation, GetRotation(), _rotationSpeed * Time.deltaTime);
     }
 
-    private void RotateToCamera()
+    private Quaternion GetRotation()
     {
         Quaternion rotation = Quaternion.LookRotation(_mainCamera.transform.position - transform.position, _mainCamera.transform.up);
-        rotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y, 0);
-        
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, _rotationSpeed * Time.deltaTime);
+        return Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y, 0);
     }
 }

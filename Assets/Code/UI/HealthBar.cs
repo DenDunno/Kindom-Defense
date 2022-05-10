@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Slider _slider;
     [SerializeField] private MPImage _healthBarView;
     [SerializeField] private Gradient _gradient;
+    [SerializeField] private Billboard _billboard;
     private const float _animationDuration = 0.25f;
     private Tween _animation; 
 
@@ -16,6 +17,7 @@ public class HealthBar : MonoBehaviour
         if (gameObject.activeInHierarchy == false)
         {
             gameObject.SetActive(true);
+            _billboard.RotateToCameraNow();
         }
 
         if (sliderValue <= 0)
