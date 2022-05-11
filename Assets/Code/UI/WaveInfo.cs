@@ -13,11 +13,10 @@ public class WaveInfo : MonoBehaviour
     
     private void Start()
     {
-        SetWaveInfo(0);
-        StartCoroutine(StartCountDown());
+        SetWaveInfo(-1);
     }
 
-    private IEnumerator StartCountDown()
+    public IEnumerator StartCountDown()
     {
         for (int i = 0; i < _waveList.Count; ++i)
         {

@@ -4,21 +4,17 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartMenuAnimation : MonoBehaviour
+public class MainMenuAnimation : MonoBehaviour
 {
-    [SerializeField] private PathAnimation _pathAnimation;
+    [SerializeField] private CameraAnimation _cameraAnimation;
     [SerializeField] private Button[] _buttons;
     private const float _duration = 0.7f;
     private const float _delay = 0.3f;
 
-    private void OnEnable()
+    public async void Start()
     {
-        _pathAnimation.Finished += Show;
-    }
-    
-    private void OnDisable()
-    {
-        _pathAnimation.Finished -= Show;
+        await _cameraAnimation.GoToMenu();
+        Show();
     }
 
     private async void Show()

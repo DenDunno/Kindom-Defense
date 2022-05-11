@@ -16,7 +16,7 @@ public class WaveSpawner : MonoBehaviour
         _playerGold = playerGold;
     }
     
-    private IEnumerator Start()
+    public IEnumerator StartWave()
     {
         for (int i = 0; i < _waveList.Count; i++)
         {
