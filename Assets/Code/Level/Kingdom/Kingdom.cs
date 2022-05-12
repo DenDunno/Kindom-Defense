@@ -4,9 +4,9 @@ public class Kingdom : MonoBehaviour
 {
     [SerializeField] private Health _health;
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider enemyCollider)
     {
-        var enemy = other.GetComponentInParent<Enemy>();
+        var enemy = enemyCollider.GetComponent<Enemy>();
         enemy.MarkAsInactive();
 
         _health.TakeDamage(enemy.Stats.Damage);

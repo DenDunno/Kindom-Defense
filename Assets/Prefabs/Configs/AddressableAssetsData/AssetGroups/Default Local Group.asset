@@ -17,7 +17,7 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 1b111b27a730df34bbed76ea3d047268
   m_SerializeEntries:
-  - m_GUID: 1f14f9bf486ce9143964059b17e95ebb
+  - m_GUID: d570c450beddefc41bb6e16c550a96b5
     m_Address: Knight
     m_ReadOnly: 0
     m_SerializedLabels: []

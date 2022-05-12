@@ -13,13 +13,13 @@ GameObject:
   - component: {fileID: 345482450624934200}
   - component: {fileID: 1495419904267916782}
   - component: {fileID: 9058512113561555889}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TimeField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &984547494326112036
 Transform:
   m_ObjectHideFlags: 0
@@ -52,7 +52,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4820,7 +4820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1797b1aee0617c4e827322b69b70bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collider: {fileID: 9058512113561555889}
+  _particleSystem: {fileID: 345482450624934201}
 --- !u!65 &9058512113561555889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 8149327620437970469}
   - component: {fileID: 6725610897592670713}
   - component: {fileID: 3277555329788984031}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4882,7 +4882,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9719,7 +9719,7 @@ GameObject:
   - component: {fileID: 8098436363166007761}
   - component: {fileID: 8098436363166007760}
   - component: {fileID: 8098436363166007767}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_RingInner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9756,7 +9756,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -14593,7 +14593,7 @@ GameObject:
   - component: {fileID: 8098436363479933736}
   - component: {fileID: 8098436363479933743}
   - component: {fileID: 8098436363479933742}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_LongHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14630,7 +14630,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -19467,7 +19467,7 @@ GameObject:
   - component: {fileID: 8098436363497949285}
   - component: {fileID: 8098436363497949284}
   - component: {fileID: 8098436363497949307}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_ShortHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19504,7 +19504,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -24341,7 +24341,7 @@ GameObject:
   - component: {fileID: 8098436363511830579}
   - component: {fileID: 8098436363511830578}
   - component: {fileID: 8098436363511830577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_MainRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24378,7 +24378,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -29215,7 +29215,7 @@ GameObject:
   - component: {fileID: 8098436363788028848}
   - component: {fileID: 8098436363788028850}
   - component: {fileID: 8098436363788028849}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_RingEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29253,7 +29253,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 0
@@ -34088,7 +34088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8098436363850882936}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_MainClock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34125,7 +34125,7 @@ GameObject:
   - component: {fileID: 8098436363921978342}
   - component: {fileID: 8098436363921978336}
   - component: {fileID: 8098436363921978343}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34162,7 +34162,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -38999,7 +38999,7 @@ GameObject:
   - component: {fileID: 8098436364379704076}
   - component: {fileID: 8098436364379704067}
   - component: {fileID: 8098436364379704066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_OuterRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39036,7 +39036,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -43873,7 +43873,7 @@ GameObject:
   - component: {fileID: 8098436364566684318}
   - component: {fileID: 8098436364566684312}
   - component: {fileID: 8098436364566684319}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_OuterRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43910,7 +43910,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -48747,7 +48747,7 @@ GameObject:
   - component: {fileID: 8098436364688487949}
   - component: {fileID: 8098436364688487948}
   - component: {fileID: 8098436364688487939}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_InnerRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48784,7 +48784,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -53619,7 +53619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8098436364817904985}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_InnerRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53652,7 +53652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8098436364851003274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_SideClock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53683,7 +53683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8098436364887190543}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_OuterRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53718,7 +53718,7 @@ GameObject:
   - component: {fileID: 8098436364997628106}
   - component: {fileID: 8098436364997628105}
   - component: {fileID: 8098436364997628104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Effect_18_MainRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53755,7 +53755,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
