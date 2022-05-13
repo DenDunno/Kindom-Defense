@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2997319999935307745}
   - component: {fileID: 2997319999935307751}
   - component: {fileID: 2997319999333247316}
+  - component: {fileID: 5847034942616784286}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,3 +208,17 @@ MonoBehaviour:
   dilateQuality: 0
   blurIterations: 1
   blurType: 1
+--- !u!114 &5847034942616784286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997319999935307773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a587d263c33943e40b30b4fae037f316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeField: {fileID: 1495419904267916782, guid: be93a254679080746a0cdf5d8440aa3b, type: 3}
+  _mainCamera: {fileID: 2997319999935307747}

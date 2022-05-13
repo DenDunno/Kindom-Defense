@@ -5,14 +5,15 @@ using UnityEngine;
 [Serializable]
 public class EnemyRestart
 {
-    [SerializeField] private BehaviorTree _behaviorTree;
     [SerializeField] private Renderer[] _renderers;
     [SerializeField] private Health _health;
     [SerializeField] private HealthBar _healthBar;
     private EnemyDissolve _enemyDissolve;
-    
-    public void Init()
+    private BehaviorTree _behaviorTree;
+
+    public void Init(BehaviorTree behaviorTree)
     {
+        _behaviorTree = behaviorTree;
         _enemyDissolve = new EnemyDissolve(_renderers);
     }
 

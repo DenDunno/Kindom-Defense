@@ -1,23 +1,19 @@
 ﻿using System;
 using BehaviorDesigner.Runtime;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AI;
 
 [Serializable]
 public class EnemyStartup
 {
-    [SerializeField] private BehaviorTree _behaviorTree;
     [SerializeField] private Canvas _healthBarCanvas;
     [SerializeField] private Billboard _billboard;
     private const string _targetPositionName = "KingdomPosition";
-    private bool _isInited;
     
-    public void Init(Transform kingdom, Camera mainCamera)
+    public void Init(Transform kingdom, Camera mainCamera, BehaviorTree behaviorTree)
     {
-        if (_isInited)
-            return;
-
-        _isInited = true;
-        _behaviorTree.SetVariableValue(_targetPositionName, kingdom.position);
+        behaviorTree.SetVariableValue(_targetPositionName, kingdom.position);
         _healthBarCanvas.worldCamera = mainCamera;
         _billboard.Init(mainCamera);
     }
