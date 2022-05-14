@@ -9,11 +9,12 @@ public class EnemyStartup
 {
     [SerializeField] private Canvas _healthBarCanvas;
     [SerializeField] private Billboard _billboard;
+    [SerializeField] private BehaviorTree _behaviorTree;
     private const string _targetPositionName = "KingdomPosition";
     
-    public void Init(Transform kingdom, Camera mainCamera, BehaviorTree behaviorTree)
+    public void Init(Transform kingdom, Camera mainCamera)
     {
-        behaviorTree.SetVariableValue(_targetPositionName, kingdom.position);
+        _behaviorTree.SetVariableValue(_targetPositionName, kingdom.position);
         _healthBarCanvas.worldCamera = mainCamera;
         _billboard.Init(mainCamera);
     }

@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     public event Action<float, float> DamageTaken;
     public bool IsDead => _health <= 0;
 
-    private void Start()
+    public void Init()
     {
         _maxHealth = _health;
     }

@@ -12,7 +12,7 @@ public class TowerMenuAnimation
 
     private const float _showDuration = 1f;
     private const float _hideDuration = 0.8f;
-    private const float _targetScale = 0.01f;
+    private const float _targetScale = 0.0075f;
     
     public Tween Show()
     {

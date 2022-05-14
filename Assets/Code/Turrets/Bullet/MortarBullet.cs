@@ -8,7 +8,7 @@ public class MortarBullet : Bullet
     
     public override void Init()
     {
-        _movement = new MortarBulletMovement(Target.position, transform.position, Speed);
+        _movement = new MortarBulletMovement(Target.position + Target.forward * 6, transform.position, Speed);
         _enemyRadar = new EnemyRadar(10, transform, _explosionRadius);
     }
 

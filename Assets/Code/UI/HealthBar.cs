@@ -51,5 +51,6 @@ public class HealthBar : MonoBehaviour
     public void ResetHealthBar()
     {
         SetValue(1);
+        _healthBar.gameObject.SetActive(false);
     }
 }
