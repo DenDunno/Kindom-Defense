@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 40
   _speed: 1
+  _explosionPrefab: {fileID: 1251044374969439476, guid: a3382936722778f46ac007dac676e870, type: 3}
   _explosionRadius: 4
 --- !u!54 &5152402033329817147
 Rigidbody:

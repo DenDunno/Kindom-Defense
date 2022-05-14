@@ -20,6 +20,7 @@ public class EnemyRestart
 
     public void Execute()
     {
+        _agent.enabled = true;
         _agent.Warp(_agent.transform.parent.position);
         _behaviorTree.OnBehaviorRestarted();
         _health.ResetHealth();
