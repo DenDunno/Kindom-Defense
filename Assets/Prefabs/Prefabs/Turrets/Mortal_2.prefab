@@ -288,5 +288,5 @@ MonoBehaviour:
   _weaponRadar: {fileID: 8886808094998734794}
   _weaponRotation: {fileID: 1627023005}
   _bulletSpawnPosition: {fileID: 1295596347}
-  _bulletPrefab: {fileID: 3087255928572589222, guid: c0929e9e0d0cdc142a0c5721e0377461, type: 3}
+  _bulletPrefab: {fileID: 9024576569899389450, guid: c0929e9e0d0cdc142a0c5721e0377461, type: 3}
   _rate: 1

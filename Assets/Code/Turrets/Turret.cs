@@ -16,7 +16,7 @@ public class Turret : Weapon
 
     protected override void UpdateWeapon(Transform targetEnemy)
     {
-        if (_weaponRotation.ReadyForShooting && ConditionForShooting)
+        if (_weaponRotation.ReadyForShooting)
         {
             if (Time.time > _rate + _clock)
             {
@@ -30,11 +30,8 @@ public class Turret : Weapon
     private void Shoot(Transform enemy)
     {
         Bullet bullet = _bulletFactory.Create();
-        bullet.transform.parent = transform;
         bullet.transform.position = _bulletSpawnPosition.position;
         bullet.SetTarget(enemy);
         bullet.Init();
     }
-
-    protected virtual bool ConditionForShooting => true;
 }
