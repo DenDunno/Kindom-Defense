@@ -187,8 +187,8 @@ MonoBehaviour:
         m_MethodName: BuildWeapon
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 3598615142931249213, guid: 3c698e83bdac81c4fbec49893b71d541, type: 3}
-          m_ObjectArgumentAssemblyTypeName: WeaponPresenter, Assembly-CSharp
+          m_ObjectArgument: {fileID: 1441023076, guid: 3c698e83bdac81c4fbec49893b71d541, type: 3}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -586,6 +586,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 154659132}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+        m_MethodName: BuildWeapon
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8161294425982824958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,18 +773,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tower: {fileID: 154659132}
   _selectionButtons:
-  - _weaponPresenter: {fileID: 5645206823764981441, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
+  - _weapon: {fileID: 0}
     _priceUI: {fileID: 8768131783003221539}
     _button: {fileID: 2056933573}
-  - _weaponPresenter: {fileID: 3598615142931249213, guid: 3c698e83bdac81c4fbec49893b71d541, type: 3}
+  - _weapon: {fileID: 0}
     _priceUI: {fileID: 6121910528573045266}
     _button: {fileID: 320184398}
   _upgradeButton:
-    _weaponPresenter: {fileID: 0}
+    _weapon: {fileID: 0}
     _priceUI: {fileID: 3809441328382764039}
     _button: {fileID: 2196847720343437537}
   _sellButton:
-    _weaponPresenter: {fileID: 0}
+    _weapon: {fileID: 0}
     _priceUI: {fileID: 2845178838029260168}
     _button: {fileID: 3559897623799293091}
 --- !u!1 &1369601806
@@ -1168,8 +1180,8 @@ MonoBehaviour:
         m_MethodName: BuildWeapon
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5645206823764981441, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
-          m_ObjectArgumentAssemblyTypeName: WeaponPresenter, Assembly-CSharp
+          m_ObjectArgument: {fileID: 5494941660833661878, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

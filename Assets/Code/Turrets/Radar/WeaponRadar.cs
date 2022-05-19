@@ -2,17 +2,16 @@
 
 public class WeaponRadar : MonoBehaviour
 {
-    [SerializeField] private float _detectionRadius = 5;
+    [SerializeField] private WeaponSettings _weaponSettings;
     private EnemyRadar _enemyRadar;
     private Health _target;
 
     public bool HasTarget => Target != null;
-    public float DetectionRadius => _detectionRadius;
     public Transform Target => _target?.transform;
     
     private void Start()
     {
-        _enemyRadar = new EnemyRadar(10, transform, _detectionRadius);
+        _enemyRadar = new EnemyRadar(10, transform, _weaponSettings.DetectionRadius);
     }
 
     private void Update()
@@ -37,6 +36,6 @@ public class WeaponRadar : MonoBehaviour
 
     private bool EnemyNotInRange()
     {
-        return Vector3.Distance(_target.transform.position, transform.position) > _detectionRadius;
+        return Vector3.Distance(_target.transform.position, transform.position) > _weaponSettings.DetectionRadius;
     }
 }

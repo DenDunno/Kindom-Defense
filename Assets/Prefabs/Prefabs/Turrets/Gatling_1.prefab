@@ -189,7 +189,6 @@ GameObject:
   - component: {fileID: 5494941660833661878}
   - component: {fileID: 5494941660833661881}
   - component: {fileID: 2148913196544987287}
-  - component: {fileID: 5645206823764981441}
   m_Layer: 0
   m_Name: Gatling_1
   m_TagString: Untagged
@@ -226,9 +225,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponRadar: {fileID: 5494941660833661881}
+  _settings: {fileID: 11400000, guid: e7c9f97bcd468d2408824bc9a89578ab, type: 2}
   _weaponRotation: {fileID: 2148913196544987287}
   _bulletSpawnPosition: {fileID: 8617533736361544428}
-  _bulletPrefab: {fileID: 5958298853143955208, guid: 243986113cc132f43a255b50be869646, type: 3}
   _rate: 0.5
   _gatlingBarrel: {fileID: 5061784592470411823}
 --- !u!114 &5494941660833661881
@@ -243,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede65a267e14407694527c7bcfc4b285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectionRadius: 10
+  _weaponSettings: {fileID: 11400000, guid: e7c9f97bcd468d2408824bc9a89578ab, type: 2}
 --- !u!114 &2148913196544987287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,22 +258,6 @@ MonoBehaviour:
   _weaponRadar: {fileID: 5494941660833661881}
   _head: {fileID: 3188998535390496370}
   _pillar: {fileID: 2831016332141302369}
---- !u!114 &5645206823764981441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5494941660833661880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8edb8bf4f67547fea49d19631d61e4d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponRadar: {fileID: 5494941660833661881}
-  _upgradedWeapon: {fileID: 3719150776240654808, guid: 336b90c7f76cf4041a1c32bb8164a6d2, type: 3}
-  _price: 10
-  _sellPrice: 5
 --- !u!1 &6970575671966200087
 GameObject:
   m_ObjectHideFlags: 0

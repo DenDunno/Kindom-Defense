@@ -6,31 +6,31 @@ public class Tower : MonoBehaviour
     [SerializeField] private Transform _buildPosition;
     private PlayerGold _playerGold;
 
-    public WeaponPresenter Weapon { get; private set; }
+    public Weapon Weapon { get; private set; }
 
     public void Init(PlayerGold playerGold)
     {
         _playerGold = playerGold;
     }
     
-    public void BuildWeapon(WeaponPresenter weaponPrefab)
+    public void BuildWeapon(Weapon weaponPrefab)
     {
         Weapon = Instantiate(weaponPrefab, _buildPosition.position, Quaternion.identity, transform);
-        _playerGold.Buy(weaponPrefab.Price);
+        _playerGold.Buy(Weapon.Settings.Price);
     }
 
     public void Upgrade()
     {
         _towerViewUpgrade.Upgrade();
-        WeaponPresenter upgradedWeapon = Weapon.UpgradedWeapon;
-        _playerGold.Buy(upgradedWeapon.Price);
+        Weapon upgradedWeapon = Weapon.Settings.UpgradedWeapon;
+        _playerGold.Buy(upgradedWeapon.Settings.Price);
         DestroyWeapon();
         BuildWeapon(upgradedWeapon);
     }
 
     public void Sold()
     {
-        _playerGold.SoldWeapon(Weapon.SellPrice);
+        _playerGold.SoldWeapon(Weapon.Settings.SellPrice);
         DestroyWeapon();
         _towerViewUpgrade.ReturnStartView();
     }
