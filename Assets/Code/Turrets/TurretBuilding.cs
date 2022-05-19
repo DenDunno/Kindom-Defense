@@ -1,16 +1,27 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
+[Serializable]
 public class TurretBuilding
 {
-    private readonly GameFactories _gameFactories;
-
-    public TurretBuilding(GameFactories gameFactories)
+    [SerializeField] private List<GatlingTurret> _gatlingTurrets;
+    [SerializeField] private List<Turret> _mortars;
+    private Dictionary<Weapon, IFactory<Weapon>> _weaponFactories = new Dictionary<Weapon, IFactory<Weapon>>();
+    
+    public void Init(GameFactories gameFactories)
     {
-        _gameFactories = gameFactories;
+        _gatlingTurrets.ForEach(turret => CreateTurretFactory(turret, gameFactories.GatlingBulletFactory));
+        _mortars.ForEach(mortar => CreateTurretFactory(mortar, gameFactories.MortarBulletFactory));
+    }
+
+    private void CreateTurretFactory(Turret turret, IFactory<Bullet> bulletFactory)
+    {
+        _weaponFactories[turret] = new TurretFactory(new SimpleFactory<Turret>(turret), bulletFactory);
     }
     
-    public Weapon Build(Weapon prefab, Transform buildPosition)
+    public Weapon Build(Weapon prefab)
     {
-        return null;
+        return _weaponFactories[prefab].Create();
     }
 }

@@ -773,10 +773,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tower: {fileID: 154659132}
   _selectionButtons:
-  - _weapon: {fileID: 0}
+  - _weapon: {fileID: 5494941660833661878, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
     _priceUI: {fileID: 8768131783003221539}
     _button: {fileID: 2056933573}
-  - _weapon: {fileID: 0}
+  - _weapon: {fileID: 1441023076, guid: 3c698e83bdac81c4fbec49893b71d541, type: 3}
     _priceUI: {fileID: 6121910528573045266}
     _button: {fileID: 320184398}
   _upgradeButton:

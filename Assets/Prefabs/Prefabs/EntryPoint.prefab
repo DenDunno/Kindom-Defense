@@ -60,6 +60,14 @@ MonoBehaviour:
     _gold: 300
   _towers: []
   _tradeButtons: []
+  _turretBuilding:
+    _gatlingTurrets:
+    - {fileID: 5494941660833661878, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
+    - {fileID: 5821382636513451751, guid: 336b90c7f76cf4041a1c32bb8164a6d2, type: 3}
+    _mortars:
+    - {fileID: 1441023076, guid: 3c698e83bdac81c4fbec49893b71d541, type: 3}
+    - {fileID: 1627023009, guid: ad3caff5d4993d447ba344e17158d398, type: 3}
+    - {fileID: 1015639642, guid: 3c1566ce24c5d214ba387d43bc05d060, type: 3}
 --- !u!114 &2134000798
 MonoBehaviour:
   m_ObjectHideFlags: 0

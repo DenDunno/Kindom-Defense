@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _upgradedWeapon: {fileID: 5821382636513451751, guid: 336b90c7f76cf4041a1c32bb8164a6d2, type: 3}
   _detectionRadius: 5
-  _price: 10
+  _price: 9
   _sellPrice: 6

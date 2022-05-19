@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 
-public class PoolableObject : MonoBehaviour, IPoolableObject
+public abstract class PoolableObject : MonoBehaviour, IPoolableObject
 {
-    public bool IsActive { get; private set; } = true;
+    private bool _isActive = true;
+
+    bool IPoolableObject.IsActive => _isActive;
     
     void IPoolableObject.ResetObject()
     {
@@ -17,7 +19,7 @@ public class PoolableObject : MonoBehaviour, IPoolableObject
 
     private void ToggleObject(bool active)
     {
-        IsActive = active;
+        _isActive = active;
         gameObject.SetActive(active);
     }
     
