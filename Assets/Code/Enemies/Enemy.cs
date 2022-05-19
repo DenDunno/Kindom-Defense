@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IPoolableObject
+public class Enemy : PoolableObject
 {
     [SerializeField] private EnemyStartup _startup;
     [SerializeField] private EnemyRestart _restart;
@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour, IPoolableObject
     [SerializeField] private Health _health;
     private bool _isInited;
     
-    public bool IsActive { get; private set; } = true;
     public Health Health => _health;
     public EnemyStats Stats => _enemyStats;
 
@@ -20,19 +19,12 @@ public class Enemy : MonoBehaviour, IPoolableObject
             _health.Init();
             _startup.Init(kingdom, mainCamera);
             _restart.Init();
-            ResetObject();
+            _restart.Execute();
         }
     }
 
-    public void ResetObject()
+    protected override void OnReset()
     {
-        IsActive = true;
         _restart.Execute();
-    }
-
-    public void MarkAsInactive()
-    {
-        IsActive = false;
-        gameObject.SetActive(false);
     }
 }

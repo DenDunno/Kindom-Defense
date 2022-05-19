@@ -7,7 +7,7 @@ public class GatlingBullet : Bullet
     [SerializeField] private TrailRenderer _trail;
     private const float _timeBeforeEmitting = 0.005f;
 
-    public override async void Init()
+    public async void Init()
     {
         Update();
 
@@ -29,7 +29,7 @@ public class GatlingBullet : Bullet
         {
             enemyHealth.TakeDamage(Damage);
 
-            ToggleBullet(false);   
+            MarkAsInactive();
             _trail.emitting = false;
         }
     }

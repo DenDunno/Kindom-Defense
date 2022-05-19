@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectFactory<T> : IUpdatable where T : MonoBehaviour, IPoolableObject
+public class ObjectFactory<T> : IUpdatable, IFactory<T> where T : MonoBehaviour, IPoolableObject
 {
     private readonly T _prefab;
     private readonly Stack<T> _pool = new Stack<T>();

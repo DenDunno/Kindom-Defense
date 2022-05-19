@@ -2,21 +2,16 @@
 
 public class MortarBullet : Bullet
 {
-    [SerializeField] private Particle _explosionPrefab;
     [SerializeField] private float _explosionRadius = 2f;
     private MortarBulletMovement _movement;
     private EnemyRadar _enemyRadar;
-    private ObjectFactory<Particle> _explosionsFactory;
+    private IFactory<Particle> _explosionsFactory;
 
-    private void Start()
+    public void Init(IFactory<Particle> explosionsFactory)
     {
-        _explosionsFactory = new ObjectFactory<Particle>(_explosionPrefab);
-        _enemyRadar = new EnemyRadar(10, transform, _explosionRadius);
-    }
-
-    public override void Init()
-    {
+        _explosionsFactory = explosionsFactory;
         _movement = new MortarBulletMovement(Target.position + Target.forward * 6, transform.position, Speed);
+        _enemyRadar = new EnemyRadar(10, transform, _explosionRadius);
     }
 
     private void Update()
@@ -30,7 +25,7 @@ public class MortarBullet : Bullet
         {
             DealDamage();
             Explode();
-            ToggleBullet(false);
+            MarkAsInactive();
         }
     }
 
@@ -44,7 +39,6 @@ public class MortarBullet : Bullet
 
     private void Explode()
     {
-        _explosionsFactory.Update();
         Particle explosion = _explosionsFactory.Create();
         explosion.transform.position = transform.position;
         explosion.Play();
