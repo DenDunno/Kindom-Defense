@@ -9730,9 +9730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cbd446a1a44a67b1d57e31ba6fed43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 40
-  _speed: 1
-  _explosionPrefab: {fileID: 1251044374969439476, guid: a3382936722778f46ac007dac676e870, type: 3}
+  _bulletStats: {fileID: 11400000, guid: cd4448dbc52bdcb4d9390850cc1729b2, type: 2}
   _explosionRadius: 4
 --- !u!54 &9184647278732532174
 Rigidbody:

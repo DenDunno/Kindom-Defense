@@ -17,7 +17,7 @@ public class GatlingBullet : Bullet
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, Target.position, Stats.Speed * Time.deltaTime);
         transform.LookAt(Target);
     }
     
@@ -27,7 +27,7 @@ public class GatlingBullet : Bullet
         
         if (enemyHealth.IsDead == false || Target.transform == enemyHealth.transform)
         {
-            enemyHealth.TakeDamage(Damage);
+            enemyHealth.TakeDamage(Stats.Damage);
 
             MarkAsInactive();
             _trail.emitting = false;

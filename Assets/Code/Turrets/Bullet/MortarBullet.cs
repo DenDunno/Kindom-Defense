@@ -10,7 +10,7 @@ public class MortarBullet : Bullet
     public void Init(IFactory<Particle> explosionsFactory)
     {
         _explosionsFactory = explosionsFactory;
-        _movement = new MortarBulletMovement(Target.position + Target.forward * 6, transform.position, Speed);
+        _movement = new MortarBulletMovement(Target.position + Target.forward * 6, transform.position, Stats.Speed);
         _enemyRadar = new EnemyRadar(10, transform, _explosionRadius);
     }
 
@@ -33,7 +33,7 @@ public class MortarBullet : Bullet
     {
         foreach (Health enemy in _enemyRadar.FindEnemies())
         {
-            enemy.TakeDamage(Damage);
+            enemy.TakeDamage(Stats.Damage);
         }
     }
 
