@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EntryPoint : MonoBehaviour
+public class GameEntryPoint : MonoBehaviour
 {
     [SerializeField] private WaveSpawner[] _waveSpawners;
     [SerializeField] private GamePools _gamePools;

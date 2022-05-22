@@ -8,9 +8,15 @@ public class CameraAnimation : MonoBehaviour
     [SerializeField] private Transform _levelChoice;
     private const float _animationDuration = 1.5f;
 
-    public async UniTask GoToMenu() => await AnimateCamera(_menu);
+    public async UniTask GoToMenu()  
+    {
+        await AnimateCamera(_menu);
+    }
 
-    public async UniTask GoToLevelChoice() => await AnimateCamera(_levelChoice);
+    public async UniTask GoToLevelChoice()
+    {
+        await AnimateCamera(_levelChoice);
+    }
 
     private async UniTask AnimateCamera(Transform target)
     {
