@@ -3,11 +3,13 @@
 public class WeaponRadar : MonoBehaviour
 {
     [SerializeField] private WeaponSettings _weaponSettings;
+    [SerializeField] private float _enemyOffset;
     private EnemyRadar _enemyRadar;
     private Health _target;
 
     public bool HasTarget => _target != null;
     public Transform Target => _target.transform;
+    public Vector3 TargetPosition => Target.position + Target.forward * _enemyOffset;
 
     private void Start()
     {

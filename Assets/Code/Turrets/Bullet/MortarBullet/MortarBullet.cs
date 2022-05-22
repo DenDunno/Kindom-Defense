@@ -10,10 +10,18 @@ public class MortarBullet : Bullet
     
     public void Init(IFactory<Particle> explosionsPool, Particle trail)
     {
-        _trail = trail;
         _explosionsFactory = explosionsPool;
-        _movement = new MortarBulletMovement(Target.position, transform.position, Stats.Speed);
         _enemyRadar = new EnemyRadar(10, transform, _explosionRadius);
+        _movement = new MortarBulletMovement(Target, transform.position, Stats.Speed);
+        _movement.EvaluatePath();
+        InitTrail(trail);
+    }
+
+    private void InitTrail(Particle trail)
+    {
+        _trail = trail;
+        _trail.transform.position = transform.position;
+        _trail.Play();
     }
 
     private void Update()

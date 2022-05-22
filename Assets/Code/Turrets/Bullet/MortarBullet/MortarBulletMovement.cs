@@ -1,26 +1,43 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class MortarBulletMovement
 {
-    private readonly Vector3 _targetPosition;
     private readonly Vector3 _startPosition;
+    private readonly Transform _target;
     private readonly float _speed;
-    private readonly float _heightOffset;
-    private readonly float _startVelocity;
-    private readonly float _flyTime;
+    private Vector3 _targetPosition;
+    private float _heightOffset;
+    private float _startVelocity;
+    private float _flyTime;
     private float _time;
 
-    public MortarBulletMovement(Vector3 targetPosition, Vector3 startPosition, float speed)
+    public MortarBulletMovement(Transform target, Vector3 startPosition, float speed)
+    {
+        _target = target;
+        _speed = speed;
+        _startPosition = startPosition;
+    }
+
+    public bool DestinationReached { get; private set; }
+
+    public void EvaluatePath()
+    {
+        EvaluatePath(_target.position);
+        
+        float enemySpeed = _target.GetComponent<NavMeshAgent>().speed;
+        float enemyOffset = _flyTime * enemySpeed;
+        
+        EvaluatePath(_target.position +  enemyOffset * _target.forward);
+    }
+    
+    private void EvaluatePath(Vector3 targetPosition)
     {
         _targetPosition = targetPosition;
-        _startPosition = startPosition;
-        _speed = speed;
         _heightOffset = EvaluateHeightOffset();
         _startVelocity = EvaluateStartVelocity();
         _flyTime = EvaluateFlyTime();
     }
-
-    public bool DestinationReached { get; private set; }
 
     public Vector3 EvaluatePosition()
     {

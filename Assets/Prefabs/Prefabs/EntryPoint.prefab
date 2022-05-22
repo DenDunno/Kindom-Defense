@@ -56,6 +56,7 @@ MonoBehaviour:
     _mortarBulletPrefab: {fileID: 9024576569899389450, guid: c0929e9e0d0cdc142a0c5721e0377461, type: 3}
     _gatlingBulletPrefab: {fileID: 5958298853143955208, guid: 243986113cc132f43a255b50be869646, type: 3}
     _explosionPrefab: {fileID: 1251044374969439476, guid: a3382936722778f46ac007dac676e870, type: 3}
+    _mortarBulletTrailPrefab: {fileID: -718937264302052249, guid: 60e58a1c2c2d0b0498a32865e3ae6877, type: 3}
   _playerGold:
     _goldUI:
       _goldUI: {fileID: 0}

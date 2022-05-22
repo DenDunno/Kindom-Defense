@@ -166,7 +166,7 @@ MonoBehaviour:
   _settings: {fileID: 11400000, guid: b4464ee1fdf154041bd9379ba83d2e62, type: 2}
   _weaponRotation: {fileID: 1015639643}
   _bulletSpawnPosition: {fileID: 604575776}
-  _rate: 1
+  _rate: 1.5
 --- !u!114 &6246670491689091239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponSettings: {fileID: 11400000, guid: b4464ee1fdf154041bd9379ba83d2e62, type: 2}
+  _enemyOffset: 3
 --- !u!114 &1015639643
 MonoBehaviour:
   m_ObjectHideFlags: 0
