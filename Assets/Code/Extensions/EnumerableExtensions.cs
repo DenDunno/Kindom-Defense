@@ -11,6 +11,14 @@ public static class EnumerableExtensions
         }
     }
     
+    public static void UpdateForEach(this IEnumerable<IUpdatable> collection)
+    {
+        foreach (IUpdatable element in collection)
+        {
+            element.Update();
+        }
+    }
+    
     public static bool IsNotEmpty<T>(this Stack<T> stack)
     {
         return stack.Count != 0;

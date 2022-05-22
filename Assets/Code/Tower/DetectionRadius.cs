@@ -6,6 +6,7 @@ public class DetectionRadius : MonoBehaviour
     
     private void OnEnable()
     {
-        transform.localScale = Vector3.one * (_tower.Weapon.Radar.DetectionRadius * 2);
+        float detectionRadius = _tower.Weapon.Settings.DetectionRadius;
+        transform.localScale = Vector3.one * (detectionRadius * 2);
     }
 }

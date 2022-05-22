@@ -1,25 +1,24 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class EntryPoint : MonoBehaviour
 {
     [SerializeField] private WaveSpawner[] _waveSpawners;
-    [SerializeField] private List<AssetReference> _enemiesUsedInLevel;
+    [SerializeField] private GamePools _gamePools;
     [SerializeField] private PlayerGold _playerGold;
     [SerializeField] private Tower[] _towers;
     [SerializeField] private TradeButtons[] _tradeButtons;
+    [SerializeField] private TurretBuilding _turretBuilding;
     private IUpdatable[] _updatables;
     
     private void Start()
     {
-        var enemiesFactory = new EnemiesFactory(_enemiesUsedInLevel);
-        _updatables = new IUpdatable[] {enemiesFactory};
+        _updatables = new IUpdatable[] {_gamePools};
 
-        enemiesFactory.LoadEnemies();
+        _gamePools.Init();
+        _turretBuilding.Init(_gamePools);
         _playerGold.Init();
-        _waveSpawners.ForEach(waveSpawner => waveSpawner.Init(enemiesFactory, _playerGold));
-        _towers.ForEach(tower => tower.Init(_playerGold));
+        _waveSpawners.ForEach(waveSpawner => waveSpawner.Init(_gamePools.EnemiesFactory, _playerGold));
+        _towers.ForEach(tower => tower.Init(_playerGold, _turretBuilding));
         _tradeButtons.ForEach(tradeButtons => tradeButtons.Init(_playerGold));
     }
 

@@ -21,10 +21,10 @@ public class TradeButtons : MonoBehaviour
         
         if (_tower.Weapon != null)
         {
-            _upgradeButton.SetWeapon(_tower.Weapon.UpgradedWeapon);
-            _sellButton.SetPrice(_tower.Weapon.SellPrice);
-            
-            bool hasUpgrade = _tower.Weapon.UpgradedWeapon != null;
+            _upgradeButton.SetWeapon(_tower.Weapon.Settings.UpgradedWeapon);
+            _sellButton.SetPrice(_tower.Weapon.Settings.SellPrice);
+
+            bool hasUpgrade = _tower.Weapon.Settings.HasUpgrade;
             _upgradeButton.SetActive(hasUpgrade);
             
             if (hasUpgrade)

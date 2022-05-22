@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,21 +47,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waveSpawners:
   - {fileID: 0}
-  - {fileID: 0}
-  _enemiesUsedInLevel:
-  - m_AssetGUID: 1f14f9bf486ce9143964059b17e95ebb
-    m_SubObjectName: 
-    m_SubObjectType: 
+  _gamePools:
+    _enemiesUsedInLevel:
+    - m_AssetGUID: d570c450beddefc41bb6e16c550a96b5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    _mortarBulletPrefab: {fileID: 9024576569899389450, guid: c0929e9e0d0cdc142a0c5721e0377461, type: 3}
+    _gatlingBulletPrefab: {fileID: 5958298853143955208, guid: 243986113cc132f43a255b50be869646, type: 3}
+    _explosionPrefab: {fileID: 1251044374969439476, guid: a3382936722778f46ac007dac676e870, type: 3}
   _playerGold:
     _goldUI:
       _goldUI: {fileID: 0}
     _gold: 300
-  _towers:
-  - {fileID: 0}
-  - {fileID: 0}
-  _tradeButtons:
-  - {fileID: 0}
-  - {fileID: 0}
+  _towers: []
+  _tradeButtons: []
+  _turretBuilding:
+    _gatlingTurrets:
+    - {fileID: 5494941660833661878, guid: 7e8079e03abd44548b0510346ebbbecf, type: 3}
+    - {fileID: 5821382636513451751, guid: 336b90c7f76cf4041a1c32bb8164a6d2, type: 3}
+    _mortars:
+    - {fileID: 8384960147552064853, guid: 3c698e83bdac81c4fbec49893b71d541, type: 3}
+    - {fileID: 4043243867533946157, guid: ad3caff5d4993d447ba344e17158d398, type: 3}
+    - {fileID: 9145682131776022605, guid: 3c1566ce24c5d214ba387d43bc05d060, type: 3}
 --- !u!114 &2134000798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,3 +87,4 @@ MonoBehaviour:
   _music: {fileID: 0}
   _waveSpawners:
   - {fileID: 0}
+  _waveInfo: {fileID: 0}

@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 public class EnemiesFactory : IUpdatable
 {
     private readonly List<AssetReference> _enemiesUsedInLevel;
-    private readonly Dictionary<string, ObjectFactory<Enemy>> _enemiesFactories = new Dictionary<string, ObjectFactory<Enemy>>();
+    private readonly Dictionary<string, ObjectPool<Enemy>> _enemiesFactories = new Dictionary<string, ObjectPool<Enemy>>();
 
     public EnemiesFactory(List<AssetReference> enemiesUsedInLevel)
     {
@@ -18,7 +18,7 @@ public class EnemiesFactory : IUpdatable
         {
             GameObject enemy = await Addressables.LoadAssetAsync<GameObject>(enemyReference).Task;
             var enemyStartup = enemy.GetComponent<Enemy>();
-            _enemiesFactories[enemyReference.AssetGUID] = new ObjectFactory<Enemy>(enemyStartup);
+            _enemiesFactories[enemyReference.AssetGUID] = new ObjectPool<Enemy>(enemyStartup);
         }
     }
 
@@ -29,7 +29,7 @@ public class EnemiesFactory : IUpdatable
 
     void IUpdatable.Update()
     {
-        foreach (ObjectFactory<Enemy> enemyFactory in _enemiesFactories.Values)
+        foreach (ObjectPool<Enemy> enemyFactory in _enemiesFactories.Values)
         {
             enemyFactory.Update();
         }

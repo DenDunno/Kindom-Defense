@@ -6,18 +6,18 @@ using UnityEngine.UI;
 [Serializable]
 public class TradeButton
 {
-    [SerializeField] private WeaponPresenter _weaponPresenter;
+    [SerializeField] private Weapon _weapon;
     [SerializeField] private TMP_Text _priceUI;
     [SerializeField] private Button _button;
 
-    public void SetWeapon(WeaponPresenter weaponPresenter)
+    public void SetWeapon(Weapon weapon)
     {
-        _weaponPresenter = weaponPresenter;
+        _weapon = weapon;
     }
     
     public void SetPrice()
     {
-        SetPrice(_weaponPresenter.Price);
+        SetPrice(_weapon.Settings.Price);
     }
     
     public void SetPrice(int gold)
@@ -27,7 +27,7 @@ public class TradeButton
 
     public void SetInteractable(float currentGold)
     {
-        _button.interactable = _weaponPresenter.Price <= currentGold;
+        _button.interactable = _weapon.Settings.Price <= currentGold;
     }
 
     public void SetActive(bool activate)

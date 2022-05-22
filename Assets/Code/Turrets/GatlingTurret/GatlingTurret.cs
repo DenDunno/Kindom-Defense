@@ -4,5 +4,11 @@ public class GatlingTurret : Turret
 {
     [SerializeField] private GatlingBarrel _gatlingBarrel;
 
-    protected override bool ConditionForShooting => _gatlingBarrel.ReadyForShooting;
+    protected override void UpdateWeapon(Transform targetEnemy)
+    {
+        if (_gatlingBarrel.ReadyForShooting)
+        {
+            base.UpdateWeapon(targetEnemy);
+        }
+    }
 }

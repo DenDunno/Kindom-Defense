@@ -1,40 +1,37 @@
 ﻿using UnityEngine;
 
-public class Turret : Weapon
+public abstract class Turret : Weapon
 {
     [SerializeField] private WeaponRotation _weaponRotation;
     [SerializeField] private Transform _bulletSpawnPosition;
-    [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private float _rate = 0.3f;
-    private ObjectFactory<Bullet> _bulletFactory;
+    private IFactory<Bullet> _bulletPool;
+    private IBulletInitialization _bulletInitialization;
     private float _clock;
 
-    private void Start()
+    public void Init(IFactory<Bullet> bulletPool, IBulletInitialization bulletInitialization)
     {
-        _bulletFactory = new ObjectFactory<Bullet>(_bulletPrefab);
+        _bulletPool = bulletPool;
+        _bulletInitialization = bulletInitialization;
     }
 
     protected override void UpdateWeapon(Transform targetEnemy)
     {
-        if (_weaponRotation.ReadyForShooting && ConditionForShooting)
+        if (_weaponRotation.ReadyForShooting)
         {
             if (Time.time > _rate + _clock)
             {
                 _clock = Time.time;
-                _bulletFactory.Update();
                 Shoot(targetEnemy.transform);
             }
         }
     }
 
-    private void Shoot(Transform enemy)
+    private void Shoot(Transform target)
     {
-        Bullet bullet = _bulletFactory.Create();
-        bullet.transform.parent = transform;
+        Bullet bullet = _bulletPool.Create();
         bullet.transform.position = _bulletSpawnPosition.position;
-        bullet.SetTarget(enemy);
-        bullet.Init();
+        bullet.SetTarget(target);
+        _bulletInitialization.Execute(bullet);
     }
-
-    protected virtual bool ConditionForShooting => true;
 }
