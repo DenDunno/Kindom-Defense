@@ -12,7 +12,7 @@ public class TurretBuilding
     public void Init(GamePools gamePools)
     {
         CreateTurretFactories(_gatlingTurrets, gamePools.GatlingBulletPool, new GatlingBulletInitialization());
-        CreateTurretFactories(_mortars, gamePools.MortarPool, new MortarBulletInitialization(gamePools.ExplosionsPool));
+        CreateTurretFactories(_mortars, gamePools.MortarBulletPool, new MortarBulletInitialization(gamePools.ExplosionsPool, gamePools.MortarBulletTrailPool));
     }
 
     private void CreateTurretFactories(IEnumerable<Turret> turrets, IFactory<Bullet> bulletPool, IBulletInitialization bulletInitialization)

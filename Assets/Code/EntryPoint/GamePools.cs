@@ -10,11 +10,13 @@ public class GamePools : IUpdatable
     [SerializeField] private MortarBullet _mortarBulletPrefab;
     [SerializeField] private GatlingBullet _gatlingBulletPrefab;
     [SerializeField] private Particle _explosionPrefab;
+    [SerializeField] private Particle _mortarBulletTrailPrefab;
     
     public EnemiesFactory EnemiesFactory { get; private set; }
-    public IFactory<MortarBullet> MortarPool { get; private set; }
+    public IFactory<MortarBullet> MortarBulletPool { get; private set; }
     public IFactory<GatlingBullet> GatlingBulletPool { get; private set; }
     public IFactory<Particle> ExplosionsPool { get; private set; }
+    public IFactory<Particle> MortarBulletTrailPool { get; private set; }
     private IUpdatable[] _factories;
     
     public void Init()
@@ -22,13 +24,16 @@ public class GamePools : IUpdatable
         var mortarBulletPool = new ObjectPool<MortarBullet>(_mortarBulletPrefab);
         var gatlingBulletPool = new ObjectPool<GatlingBullet>(_gatlingBulletPrefab);
         var explosionsPool = new ObjectPool<Particle>(_explosionPrefab);
+        var mortarBulletTrailPool = new ObjectPool<Particle>(_mortarBulletTrailPrefab);
         
         EnemiesFactory = new EnemiesFactory(_enemiesUsedInLevel);
-        MortarPool = mortarBulletPool;
+        MortarBulletPool = mortarBulletPool;
         GatlingBulletPool = gatlingBulletPool;
         ExplosionsPool = explosionsPool;
+        MortarBulletTrailPool = mortarBulletTrailPool;
         
-        _factories = new IUpdatable[] {mortarBulletPool, gatlingBulletPool, explosionsPool, EnemiesFactory};
+        _factories = new IUpdatable[]
+            {EnemiesFactory, mortarBulletPool, gatlingBulletPool, explosionsPool, mortarBulletTrailPool};
         
         EnemiesFactory.LoadEnemies();
     }

@@ -22,7 +22,7 @@ public abstract class Turret : Weapon
             if (Time.time > _rate + _clock)
             {
                 _clock = Time.time;
-                Shoot(targetEnemy.transform);
+                Shoot(targetEnemy);
             }
         }
     }

@@ -195,6 +195,7 @@ MonoBehaviour:
   _weaponRadar: {fileID: 6246670491689091239}
   _head: {fileID: 8076631534903591878}
   _pillar: {fileID: 6707971046559432689}
+  _idleAngle: -45
 --- !u!1 &6425456792994065596
 GameObject:
   m_ObjectHideFlags: 0

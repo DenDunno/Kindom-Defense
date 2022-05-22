@@ -279,3 +279,4 @@ MonoBehaviour:
   _weaponRadar: {fileID: 6435225048757986884}
   _head: {fileID: 3182414076144011495}
   _pillar: {fileID: 5974485055872358674}
+  _idleAngle: -45

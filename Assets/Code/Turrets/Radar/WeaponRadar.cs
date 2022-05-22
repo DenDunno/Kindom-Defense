@@ -6,9 +6,9 @@ public class WeaponRadar : MonoBehaviour
     private EnemyRadar _enemyRadar;
     private Health _target;
 
-    public bool HasTarget => Target != null;
-    public Transform Target => _target?.transform;
-    
+    public bool HasTarget => _target != null;
+    public Transform Target => _target.transform;
+
     private void Start()
     {
         _enemyRadar = new EnemyRadar(10, transform, _weaponSettings.DetectionRadius);

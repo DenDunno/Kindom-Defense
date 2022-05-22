@@ -5,6 +5,7 @@ public abstract class WeaponRotation : MonoBehaviour
     [SerializeField] private WeaponRadar _weaponRadar;
     [SerializeField] private Transform _head;
     [SerializeField] private Transform _pillar;
+    [SerializeField] private float _idleAngle;
     private WeaponRotationToEnemy _rotationToEnemy;
     private IUpdatable _idleAnimation;
 
@@ -14,7 +15,7 @@ public abstract class WeaponRotation : MonoBehaviour
     {
         IWeaponHeadRotationToEnemy headRotationToEnemy = GetHeadRotationToEnemy(_weaponRadar, _head);
         _rotationToEnemy = new WeaponRotationToEnemy(_weaponRadar, _pillar, _head, headRotationToEnemy);
-        _idleAnimation = new WeaponIdleAnimation(_pillar, _head, IdleAngle);
+        _idleAnimation = new WeaponIdleAnimation(_pillar, _head, _idleAngle);
     }
 
     private void Update()
@@ -23,6 +24,5 @@ public abstract class WeaponRotation : MonoBehaviour
         updatable.Update();
     }
 
-    protected abstract float IdleAngle { get; }
     protected abstract IWeaponHeadRotationToEnemy GetHeadRotationToEnemy(WeaponRadar weaponRadar, Transform head);
 }

@@ -6,17 +6,22 @@ public class MortarBullet : Bullet
     private MortarBulletMovement _movement;
     private EnemyRadar _enemyRadar;
     private IFactory<Particle> _explosionsFactory;
-
-    public void Init(IFactory<Particle> explosionsFactory)
+    private Particle _trail;
+    
+    public void Init(IFactory<Particle> explosionsPool, Particle trail)
     {
-        _explosionsFactory = explosionsFactory;
-        _movement = new MortarBulletMovement(Target.position + Target.forward * 6, transform.position, Stats.Speed);
+        _trail = trail;
+        _explosionsFactory = explosionsPool;
+        _movement = new MortarBulletMovement(Target.position, transform.position, Stats.Speed);
         _enemyRadar = new EnemyRadar(10, transform, _explosionRadius);
     }
 
     private void Update()
     {
-        transform.position = _movement.EvaluatePosition();
+        Vector3 position = _movement.EvaluatePosition();
+
+        transform.position = position;
+        _trail.transform.position = position;
 
         if (_movement.DestinationReached)
         {

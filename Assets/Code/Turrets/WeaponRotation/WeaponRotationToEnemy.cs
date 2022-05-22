@@ -23,7 +23,6 @@ public class WeaponRotationToEnemy : IUpdatable
     {
         RotatePillarToEnemy();
         RotateHeadToEnemy();
-        
     }
 
     private void RotateHeadToEnemy()
