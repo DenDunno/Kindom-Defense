@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: -0.00000005964241, y: 0.6811278, z: -0.000000055484914, w: 0.73216456}
   m_LocalPosition: {x: 0.00014493571, y: 0.00048360275, z: 0.002722025}
   m_LocalScale: {x: 0.32605934, y: 0.32605934, z: 0.32605934}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3182414076144011495}
   m_RootOrder: 0
@@ -58,6 +59,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3182414076144011495}
   m_Father: {fileID: 5910222147314924796}
@@ -82,6 +84,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -140,6 +143,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.00003914894, y: 0.0056763357, z: -0.0008165775}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1747587477}
   m_Father: {fileID: 5974485055872358674}
@@ -164,6 +168,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -203,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5910222147314924796}
-  - component: {fileID: 1441023076}
+  - component: {fileID: 8384960147552064853}
   - component: {fileID: 6435225048757986884}
   - component: {fileID: 1766905382}
   m_Layer: 0
@@ -223,12 +228,13 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.6811298, z: 0, w: 0.7321627}
   m_LocalPosition: {x: 58.90489, y: 0, z: 21.13}
   m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5974485055872358674}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -85.864, z: 0}
---- !u!114 &1441023076
+--- !u!114 &8384960147552064853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,7 +243,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6435225048757986886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4543a6073b6343b0ad66c69b75bf24ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a5d8a13d776484da52b377c0279bf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponRadar: {fileID: 6435225048757986884}

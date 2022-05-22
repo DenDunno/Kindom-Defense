@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebdf4d05ae2453ab94bbd49ad4047ed, type: 3}
   m_Name: Mortar_2
   m_EditorClassIdentifier: 
-  _upgradedWeapon: {fileID: 1015639642, guid: 3c1566ce24c5d214ba387d43bc05d060, type: 3}
+  _upgradedWeapon: {fileID: 9145682131776022605, guid: 3c1566ce24c5d214ba387d43bc05d060, type: 3}
   _detectionRadius: 10
   _price: 30
   _sellPrice: 20
