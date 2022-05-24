@@ -20,7 +20,7 @@ public class MainMenuButtons : MonoBehaviour
     
     public async void Hide()
     {
-        await AnimateButtons(_buttons.Reverse(), _startXPosition, Ease.InBack);
+        await AnimateButtons(_buttons.Reverse(), _startXPosition, Ease.InCirc);
     }
 
     private async UniTask AnimateButtons(IEnumerable<Button> buttons, float targetPosition, Ease ease)

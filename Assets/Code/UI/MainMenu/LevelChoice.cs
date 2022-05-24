@@ -14,6 +14,6 @@ public class LevelChoice : MonoBehaviour
     
     public void Hide()
     {
-        _rectTransform.DOAnchorPosY(_startYPosition, _duration).SetEase(Ease.InBack);;
+        _rectTransform.DOAnchorPosY(_startYPosition, _duration);
     }
 }
